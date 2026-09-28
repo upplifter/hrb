@@ -32,7 +32,7 @@
     "myblock",
     ".com"
   ],
-  "max_rounds": 8,
+  "max_rounds": 10,
   "max_questions_per_round": 12,
   "exit_blocking_min_severity": "Medium",
   "seed_from_audit_round1": true

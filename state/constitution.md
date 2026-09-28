@@ -104,7 +104,7 @@ Answer: A
 - A. At most 8 rounds and 12 questions per round. Extra questions carry to the next round. (Recommended)
 - B. Other: ___
 
-Answer: A
+Answer: A. Raised to at most 10 rounds (user, 2026-09-28).
 
 ### C-13 · Style of existing text
 
