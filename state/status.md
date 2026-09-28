@@ -94,5 +94,5 @@ Constitution applied: yes (2026-09-28)
 - Backlog added: L-077, L-079, L-091, L-134, L-161 (re-checked as Low).
 - Questions asked: 12 (rounds/round-06/questions.md, Q-60 to Q-71), covering L-081, L-084, L-085, L-090, L-135, L-150, L-160, L-163, L-369 to L-372, L-375 to L-379.
 - Carried to round 7 (options drafted in rounds/round-06/findings-R.md): L-074, L-075, L-080, L-089, L-136, L-140, L-146, L-162, L-164.
-- Size: 16,870 words (lint), round growth -0.35%. Lint: RESULT WARN, no FAIL.
+- Size: 16,858 words (lint), 135,289 bytes; round growth -0.35%. Lint: RESULT WARN, no FAIL.
 - Sweep clean: no (new Medium findings and questions). Clean-sweep counter: 0.
