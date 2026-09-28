@@ -77,13 +77,13 @@ Status values: open, fixed, asked, decided, deferred, rejected, backlog, reverte
 | L-071 | D,B,E | §3 Intent Scope > unclear_intent; §3 transfer_to_agent | Medium | Human | decided | 1 | Unresolved intent may transfer or go to a message, with no rule to choose. |
 | L-072 | D,S | §2 State 5 broadening.scenario_selection (timing) | Medium | Human | fixed | 1 | Selection runs after ready, but drop-off, DDO, and same-Tax-Pro choices come earlier (F-24). |
 | L-073 | D,S | §2 State 5 scheduler_always tool-result item (not_confirmed) | Medium | Human | decided | 1 | Re-gate on not_confirmed has no cap or exit (F-27). |
-| L-074 | D,E | §2 State 5 invalidation.partial_acceptance; §2 State 3 Tax Pro Trade-off | Medium | Human | asked | 1 | Trade-off asked outside the rung that drops the Tax Pro. |
-| L-075 | S | §2 State 5 scheduler_always efile_rejection_retail item | Medium | Human | asked | 1 | efile entry does not say whether to ask the type; trade-off outside a ladder step (F-28). |
+| L-074 | D,E | §2 State 5 invalidation.partial_acceptance; §2 State 3 Tax Pro Trade-off | Medium | Human | decided | 1 | Trade-off asked outside the rung that drops the Tax Pro. |
+| L-075 | S | §2 State 5 scheduler_always efile_rejection_retail item | Medium | Human | decided | 1 | efile entry does not say whether to ask the type; trade-off outside a ladder step (F-28). |
 | L-076 | D | §2 State 5 interruptions.informational_question | Medium | Human | decided | 1 | A pre-interruption yes survives, against "explicit yes immediately before any write". |
 | L-077 | D,S | §1.5 global_never (post-handback tool calls) | Medium | Human | backlog | 1 | No rule says which tools stay callable after a commit or handback decision (F-11). |
 | L-078 | E,S | §3 Cross-Office Restriction; office_never direct-number item | Medium | Human | fixed | 1 | Direct-number scope names two referents (F-26). |
 | L-079 | S | §3 office_always closed_for_season; §2 State 3 Off-Season Closure | Medium | Human | backlog | 1 | Two agents propose a Year-Round Office from two tools (F-15). |
-| L-080 | B | §3 Office Details Logic > Off-Season Closure; §1.4 Off-season row | Medium | Human | asked | 1 | Office Information speaks the YRO address; the frozen line names officeName and asks a booking question. |
+| L-080 | B | §3 Office Details Logic > Off-Season Closure; §1.4 Off-season row | Medium | Human | decided | 1 | Office Information speaks the YRO address; the frozen line names officeName and asks a booking question. |
 | L-081 | A,S | §3 Office Details Logic > By-Appointment-Only | Medium | Human | fixed | 1 | Routes to the Scheduler without a booking request and has no route_intent outcome (F-25). |
 | L-082 | S,B | §3 Office Contact Triage > If CLOSED; leave_message_offer triggers | Medium | Human | decided | 1 | leave_message_offer is returned where no transfer was tried (F-13). |
 | L-083 | B | §4 Fulfillment Priority step 1; 4A | Medium | Human | decided | 1 | Part 4 speaks the message offer that §1.3 gives to the flow. |
@@ -92,7 +92,7 @@ Status values: open, fixed, asked, decided, deferred, rejected, backlog, reverte
 | L-086 | B | §2 State 1 New Customer DOB Check | Medium | Human | decided | 1 | DOB year repair turn vs "DOB never receives a confirmation turn". |
 | L-087 | E,B | §1.2 Data Sanitization; §5.2 book_appointment newCustomer | Medium | Human | decided | 1 | PII exception names only find_customer; book_appointment also carries DOB and ssnLast4. |
 | L-088 | E | §1.5 global_never tax-advice item | Medium | Human | decided | 1 | Base JSON omits the §1.2 bans on notices, loan terms, fees, and penalties. |
-| L-089 | E | §1.5 global_voice_lexicon vs §1.4 | Medium | Human | asked | 1 | Several §1.4 approved lines have no JSON copy under C-2 mirror. |
+| L-089 | E | §1.5 global_voice_lexicon vs §1.4 | Medium | Human | decided | 1 | Several §1.4 approved lines have no JSON copy under C-2 mirror. |
 | L-090 | S | §2 State 5 scheduler_always callback item | Medium | Human | fixed | 1 | appointmentNotes capture vs "never capture message content" (F-14). |
 | L-091 | S | §2 State 5 objective; returning_tax_pro_unavailable regional rung | Medium | Human | backlog | 1 | Regional virtual rung has no office anchor (F-23). |
 | L-092 | C | §2 State 5 agent_specific_outcomes.appointment_already_canceled | Medium | Human | decided | 1 | No tool result can trigger appointment_already_canceled. |
@@ -139,17 +139,17 @@ Status values: open, fixed, asked, decided, deferred, rejected, backlog, reverte
 | L-133 | E | §2 State 5 scheduler_always tax_notice DDO item; §5.2 send_secure_link | High | Human | decided | 2 | Five notice values must be sent on DDO, but send_secure_link has no field for them. |
 | L-134 | A,C,E | §5.2 find_offices_near; §1.1 routedOfficeRef | Medium | Human | backlog | 2 | After D-010, find_offices_near still resolves DNIS and returns invalid_dnis. |
 | L-135 | A | §1.1 customerRef, customerStatus; §2 State 1 State Persistence | Medium | Human | fixed | 2 | Unclear whether Head of Call authentication skips find_customer. |
-| L-136 | A | §2 State 5 objective; §1.1 operation | Medium | Human | asked | 2 | Confirm Appointment routes to the Scheduler, which has no confirm operation. |
+| L-136 | A | §2 State 5 objective; §1.1 operation | Medium | Human | rejected | 2 | Confirm Appointment routes to the Scheduler, which has no confirm operation. |
 | L-137 | A,C,E | §5.1 search_knowledge_base KB results; global_outcomes.no_approved_answer | Medium | Human | decided | 2 | requires_tax_pro and below-threshold results have no handler or outcome. |
 | L-138 | B,E | §1.5 global_always KB item; §5.1 search_knowledge_base | Medium | Human | decided | 2 | Base ignores followUpTopics; Part 5 builds clarification from them. |
 | L-139 | A | §1.2 Hours: One Source; Part 4 tools | Medium | Human | decided | 2 | Tax Pro agent has no owner for hours and phone questions after D-012. |
-| L-140 | A | §4 Speak to Tax Pro (Generic); §3 office_contact | Medium | Human | asked | 2 | "Office associate" requests have two owners. |
+| L-140 | A | §4 Speak to Tax Pro (Generic); §3 office_contact | Medium | Human | decided | 2 | "Office associate" requests have two owners. |
 | L-141 | A | §4 Out-of-Scope (New Appointment); Fulfillment Priority step 4 | Medium | Human | decided | 2 | Phone tax_prep request fits both new appointment and callback route. |
 | L-142 | A,D | §4 Tax Pro Lookup > Generic Request; workflow.speak_to_tp_generic | Medium | Human | fixed | 2 | No path when the caller has no or an inactive prior Tax Pro. |
 | L-143 | A | §4 Out-of-Scope (FAQ Agent); global_always informational item | Medium | Human | decided | 2 | Income tax course and password questions have no target outside Part 4. |
 | L-144 | A | §2 State 2 DDO Rules > Rescheduling | Medium | Human | decided | 2 | DDO change "in a separate invocation" has no owner or operation. |
 | L-145 | D | §2 State 5 scheduler_always none_nearby; broadening.principles | Medium | Human | decided | 2 | none_nearby on a nearby-office rung transfers instead of exhausting the rung. |
-| L-146 | B,D | §1.4 conflict from readiness; §5.2 check_search_readiness conflict | Medium | Human | asked | 2 | Conflict line covers only a past date; closed filing windows have no signal. |
+| L-146 | B,D | §1.4 conflict from readiness; §5.2 check_search_readiness conflict | Medium | Human | decided | 2 | Conflict line covers only a past date; closed filing windows have no signal. |
 | L-147 | D | §2 State 5 scenario_selection item 7; peak_capacity.primary | Medium | Human | decided | 2 | Peak switch from returning_same_tax_pro drops the kept Tax Pro without consent. |
 | L-148 | D,E | §2 State 5 broadening.ladders.extension; scheduler_always tax_extension item; §2 State 2 Tax Extension | Medium | Human | decided | 2 | Self-filing rung exits undefined; JSON and prose tie route_intent to different paths. |
 | L-149 | B | §2 State 5 broadening.ladders.extension rung 2 | Medium | Human | decided | 2 | sourceUtterance set to a scripted string, not the caller's words. |
@@ -165,9 +165,9 @@ Status values: open, fixed, asked, decided, deferred, rejected, backlog, reverte
 | L-159 | C,E | Part 5 Conventions (CDAS); scheduler_always isCDAS item; ladders.callback | Medium | Human | decided | 2 | Callback slot with a carried Tax Pro is both CDAS and named. |
 | L-160 | C,E | §5.2 book_appointment phoneNumber, contact.callbackNumber | Medium | Human | fixed | 2 | callbackNumber rule for existing customers unclear; phoneNumber undefined. |
 | L-161 | C | §2 State 5 closure.line_patterns | Medium | Human | backlog | 2 | Line-pattern keys do not map to finalOutcome values. |
-| L-162 | C | §5.2 check_search_readiness taxProPreference.source | Medium | Human | asked | 2 | Tax Pro source has no enum. |
+| L-162 | C | §5.2 check_search_readiness taxProPreference.source | Medium | Human | decided | 2 | Tax Pro source has no enum. |
 | L-163 | C | §5.2 book_appointment appointmentNotes | Medium | Human | fixed | 2 | Example sends appointmentNotes on tax_prep with notice content. |
-| L-164 | B | §2 State 1 Mini-Dialogue 1A; global_always confirm-at-capture item | Medium | Human | asked | 2 | New customer's name is never read back. |
+| L-164 | B | §2 State 1 Mini-Dialogue 1A; global_always confirm-at-capture item | Medium | Human | decided | 2 | New customer's name is never read back. |
 | L-165 | B | §2 State 5 scheduler_always invalid_location item | Medium | Human | fixed | 2 | ZIP reprompt has no attempt cap. |
 | L-166 | E | §5.2 send_secure_link Outcome Results | Medium | Human | decided | 2 | No indeterminate result, so outcome_unknown cannot fire for DDO. |
 | L-167 | A | §2 State 5 scheduler_always callback item; §4 tax_pro_always[0] | Low | Human | backlog | 2 | Call reason elicited in Part 4 is not carried to the Scheduler. |
@@ -386,9 +386,9 @@ Status values: open, fixed, asked, decided, deferred, rejected, backlog, reverte
 | L-380 | C | Ladders table; broadening.ladders primaries; scenario_selection item 7 | Medium | Safe | fixed | 6 | Five names for the ladder's office unified as "selected office". |
 | L-381 | F | scheduler_never retry item; durationSpoken item; §1.2 Grouped capture; §2 Central Line; Returning, Same Tax Pro cell; global_always preamble and DOB items; scheduler_always third-party, textConfirmation, book_appointment, type items; office_info_flow[1] | Low | Safe | fixed | 6 | 12 editorial trims (F-01 to F-12), about -62 words. |
 | L-382 | V | customer_declined_options; Part 3 transfer_to_agent and office_always; §5.2 get_customer_appointments one_appointment | Low | Safe | fixed | 6 | Round 5 decided follow-up propagation of D-051, D-056, D-054. |
-| L-383 | V | §2 State 2 After Part 4; scheduler_always routed_to_scheduler item; §2 Tax Pro Requests | Medium | Human | asked | 6 | After D-061, a caller routed from Part 4 for another Tax Pro who re-asks for the named Tax Pro loops back to Part 4; "they aren't available" can be false. |
-| L-384 | V | §2 State 3 Message Request; scheduler_always message item | Medium | Human | asked | 6 | A message request naming no recipient has no rule in the Scheduler (D-067 covers Tax Pro or office staff only). |
-| L-385 | V | scheduler_always routed_to_scheduler item; §5.2 book_appointment Note | Medium | Human | asked | 6 | Unclear whether a Part 4 callback request booked as tax_prep phone_callback carries the one-phrase appointmentNotes reason. |
+| L-383 | V | §2 State 2 After Part 4; scheduler_always routed_to_scheduler item; §2 Tax Pro Requests | Medium | Human | decided | 6 | After D-061, a caller routed from Part 4 for another Tax Pro who re-asks for the named Tax Pro loops back to Part 4; "they aren't available" can be false. |
+| L-384 | V | §2 State 3 Message Request; scheduler_always message item | Medium | Human | decided | 6 | A message request naming no recipient has no rule in the Scheduler (D-067 covers Tax Pro or office staff only). |
+| L-385 | V | scheduler_always routed_to_scheduler item; §5.2 book_appointment Note | Medium | Human | decided | 6 | Unclear whether a Part 4 callback request booked as tax_prep phone_callback carries the one-phrase appointmentNotes reason. |
 | L-386 | E | §4 State 2 interruptions.intent_change | Medium | Safe | fixed | 7 | Handler lacked D-061's other-booking exception. |
 | L-387 | C | §4 State 2 tax_pro_always by-name item; unavailable item | Medium | Safe | fixed | 7 | no_match named three things; first-party by-name no_match had to speak and skip the unavailable line. |
 | L-388 | C | §1.5 global_outcomes.validation_failed | Medium | Safe | fixed | 7 | Definition covered second invalid_constraints and delivery_failed, which D-048 and D-001 send to system_failure. |
@@ -396,8 +396,8 @@ Status values: open, fixed, asked, decided, deferred, rejected, backlog, reverte
 | L-390 | E | §2 State 1 Authentication Logic > No Match Outside a New Booking | Low | Safe | fixed | 7 | Bare pointer did not name D-070's Authentication failed line. |
 | L-391 | C | §1.5 global_never message item | Low | Safe | fixed | 7 | "Work Center message" -> "caller's message". |
 | L-392 | F | §5.1 Transfer results; scheduler_always invalid_location item; §4 find_customer entry; tax_pro_always options and last items; same_day rungs[1]; §3 Off-Season Closure; office_always closed_for_season item; §5.2 get_customer_appointments Note; §1.1 customerRef | Low | Safe | fixed | 7 | 9 editorial trims (F-03, F-06, F-08, F-12, F-13, F-16, F-18, F-19, F-20). |
-| L-393 | D | workflow.reschedule_existing[3], [4]; changing-array item; §5.2 get_customer_appointments Response | High | Human | asked | 7 | Reschedule has no officeRef, taxProRef, date, or time for the bound appointment. |
-| L-394 | D | agent_specific_tools.check_search_readiness; §1.4 conflict row; §1.2 Input Exhaustion | Medium | Human | asked | 7 | Repeated readiness needs_more or conflict has no cap (asked with L-146). |
+| L-393 | D | workflow.reschedule_existing[3], [4]; changing-array item; §5.2 get_customer_appointments Response | High | Human | decided | 7 | Reschedule has no officeRef, taxProRef, date, or time for the bound appointment. |
+| L-394 | D | agent_specific_tools.check_search_readiness; §1.4 conflict row; §1.2 Input Exhaustion | Medium | Human | decided | 7 | Repeated readiness needs_more or conflict has no cap (asked with L-146). |
 | L-395 | D | workflow.reschedule_existing[3]; gatekeeper, waterfall, floor items | Medium | Human | open | 7 | Unclear whether reschedule re-runs complexity screening. |
 | L-396 | D | §2 State 3 Ladders, Rescheduling row; ladders.reschedule rungs[2], [3] | Medium | Human | open | 7 | Reschedule ladder when the bound appointment names no Tax Pro. |
 | L-397 | D | §3 Office Contact Triage; office_contact_flow[1]; Named Office | Medium | Human | open | 7 | office_contact has no step to resolve a caller-named office. |
