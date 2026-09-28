@@ -96,3 +96,10 @@ Constitution applied: yes (2026-09-28)
 - Carried to round 7 (options drafted in rounds/round-06/findings-R.md): L-074, L-075, L-080, L-089, L-136, L-140, L-146, L-162, L-164.
 - Size: 16,858 words (lint), 135,289 bytes; round growth -0.35%. Lint: RESULT WARN, no FAIL.
 - Sweep clean: no (new Medium findings and questions). Clean-sweep counter: 0.
+
+## Round 6 answers (applied before round 7)
+- 12 answers recorded as D-061 to D-072; 17 items fixed (L-081, L-084, L-085, L-090, L-135, L-150, L-160, L-163, L-369 to L-372, L-375 to L-379).
+- New request field approved and added: `find_customer` customerRef (D-071). No outcome, nextAction, or routingTarget added or removed.
+- Offsetting Safe trims of about -115 words (closure.line_patterns handoff_unavailable, gate-correction item, restated outcome defaults, §1.3).
+- Verifier: 7 pass, 5 fix-needed, all fixed; 0 reverted. New Human items L-383, L-384, L-385 (Medium, open).
+- Size: 17,110 words (lint), 136,995 bytes. Round 6 growth +0.91% (limit 1.0%). Lint: RESULT WARN, no FAIL.

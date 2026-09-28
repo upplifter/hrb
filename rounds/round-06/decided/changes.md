@@ -22,3 +22,11 @@ Offsetting Safe trims (every trigger kept), about -115 words:
 - Scheduler, Part 3, and Part 4 agent_specific_outcomes: dropped "transactionOccurred false" and, in the Scheduler and Part 4, "intent <own intent>", which restate the terminal_payload_contract default. Part 3 keeps intent because it varies by path.
 - customer_declined_options: "a second own-Tax-Pro request" became "repeats an own-Tax-Pro request" (grammar; the length WARN is cleared).
 - Skipped for the oscillation guard: §5.1 transfer_to_agent Transfer results (edited in rounds 2 to 4).
+
+## Follow-up from verify.md
+
+L-369 (follow-up) | Part 4 objective; §4 Fulfillment Priority step 4; tax_pro_always callback item | Stale "when that one is unavailable" and "decline both" updated; positional pointer made a key path | 0
+L-081, L-370 (follow-up) | §3 If closed_for_season or by_appointment_only | Year-Round Office address kept on closed_for_season | +5
+L-379 (follow-up) | §3 Lookup Failure | "On either path" | +2
+L-084, L-150 (follow-up) | §2 State 1 No Match Outside a New Booking | Heading-path pointer | 0
+L-090, L-160, L-163 (follow-up) | §5.2 book_appointment Note | "appointmentNotes is null except on callback." | +6

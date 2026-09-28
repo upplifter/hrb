@@ -285,7 +285,7 @@ Establish the identity of the transaction subject before any retrieval or bookin
 - **Third-Party:** Require registeredAni = true and authenticate the appointment owner using First Name, Last Name, DOB, and Last 4 SSN. Confirm the owner's name at capture.
 - Proceed only on single_match. On failure or unregistered ANI, retrieve nothing, neither confirm nor deny appointment existence, and transfer (see §1.4, Approved Recovery Lines).
 - **New Customers:** `find_customer` is read-only, and a no_match creates no profile. Profile creation is deferred to the `book_appointment` or `send_secure_link` commit.
-- **No Match Outside a New Booking:** On reschedule_existing, cancel_existing, or an appointment-details question, a no_match transfers as identity_unresolved (see §1.4, Authentication failed).
+- **No Match Outside a New Booking:** On reschedule_existing, cancel_existing, or an appointment-details question, a no_match transfers as identity_unresolved (see §1.4, Approved Recovery Lines).
 
 **Dynamic State Invalidation: Identity**
 
@@ -823,7 +823,7 @@ Answer office hours, location, and directions questions, and triage requests to 
 
 - **Named Office:** For a caller-named office other than the routedOfficeRef office, capture a ZIP, call `get_office_details`, and match officeName against the returned office and its nearbyOffices. Then call `get_office_details` with the matched officeRef.
 - **No Match:** An officeName with no match, or office_not_found on a caller-given ZIP, is a no-match: reprompt once for the office name or ZIP, then transfer as clarification_exhausted.
-- **Lookup Failure:** On a tool error, or office_not_found on an officeRef (e.g., routedOfficeRef, a matched office, or yroOfficeRef), transfer as system_failure.
+- **Lookup Failure:** On either path, on a tool error or office_not_found on an officeRef (e.g., routedOfficeRef, a matched office, or yroOfficeRef), transfer as system_failure.
 - **Standard Blurb:** Synthesize the hours, address, and landmark directions into one concise blurb. Answer follow-ups, including another office, in the same invocation, then return office_info_provided.
 - **Silence After an Answer:** Return office_info_provided without a reprompt.
 - **By-Appointment-Only:** If seasonalStatus is by_appointment_only, state that the office operates by appointment only; never quote standard hours or ask whether to book. On office_info, answer follow-ups and return office_info_provided.
@@ -832,7 +832,7 @@ Answer office hours, location, and directions questions, and triage requests to 
 **Office Contact Triage (**office_contact **path)**
 
 - Before `check_office_open_status`, capture a ZIP if routedOfficeRef is null and check seasonalStatus, as on the office_info path.
-- **If closed_for_season or by_appointment_only:** After the seasonal status statement, skip `check_office_open_status`, give no phone number, and return office_contact_triage_complete (nextAction = leave_message_offer).
+- **If closed_for_season or by_appointment_only:** After the seasonal status statement (with yroOfficeAddressSpoken on closed_for_season), skip `check_office_open_status`, give no phone number, and return office_contact_triage_complete (nextAction = leave_message_offer).
 - Evaluate open status only with `check_office_open_status`; never calculate time math.
 - **If OPEN:** State: "The office is currently open, but their staff is helping other clients right now." Never give the main line number; stop speaking and return office_open_unanswered (nextAction = leave_message_offer).
 - **If CLOSED:** State that the office is currently closed. Read the upcoming open hours (nextOpenHoursSpoken), provide the main line number, then stop speaking and return nextAction = leave_message_offer.
@@ -960,7 +960,7 @@ Once a Tax Pro is confirmed:
 1. State availability and options without asking a yes/no question: "I can check their calendar for a callback, or I can help you leave a message."
 2. Mention the Online Message Center ("For your convenience, you can also message your tax pro anytime through the Online Message Center for Tax Pro Review").
 3. Wait for the caller's intent.
-4. Return `routed_to_message` on a message, `routed_to_scheduler` on a callback, or `tax_pro_options_declined` if they decline both.
+4. Return `routed_to_message` on a message, `routed_to_scheduler` on a callback or another Tax Pro, or `tax_pro_options_declined` if they decline every option.
 
 **Fulfillment: Leave a Message**
 
@@ -1016,7 +1016,7 @@ Once a Tax Pro is confirmed:
 
 ```json
 {
-    "objective": "Help callers reach their assigned or named Tax Pro through a leave_message handback or a Scheduler callback, or route them to the Scheduler for another Tax Pro when that one is unavailable.",
+    "objective": "Help callers reach their assigned or named Tax Pro through a leave_message handback or a Scheduler callback, or route them to the Scheduler for another Tax Pro.",
     "tax_pro_always": [
         "Elicit the reason for the call first.",
         "Disclose a prior-year or assigned Tax Pro only after find_customer resolves the owner; for third parties require registeredAni true and owner authentication, otherwise transfer without retrieval.",
@@ -1024,7 +1024,7 @@ Once a Tax Pro is confirmed:
         "On a by-name match, check activeStatus and takingAppointmentsInd; on a generic request, read only priorTaxProStatus. If the Tax Pro is unmatched, inactive, or unavailable, say so and offer only to book with another qualified Tax Pro (routed_to_scheduler, appointmentType null); with no prior Tax Pro or a first-party no_match, skip the unavailable line. A decline returns tax_pro_options_declined.",
         "Once a Tax Pro is confirmed, state the options without asking a yes/no question: 'I can check their calendar for a callback, or I can help you leave a message.' Wait for the caller's intent. If the caller declines both, return tax_pro_options_declined.",
         "After the options, say 'For your convenience, you can also message your tax pro anytime through the Online Message Center for Tax Pro Review.'",
-        "If the caller chooses a callback, return route_intent with routingTarget set to appointment_scheduler, appointmentType set to callback, and the confirmed taxProRef and officeRef. A callback only reaches a confirmed Tax Pro; any other request to book, reschedule, or cancel an appointment, or a question about an existing one, returns intent_changed with routingTarget appointment_scheduler, except per the next item.",
+        "If the caller chooses a callback, return route_intent with routingTarget set to appointment_scheduler, appointmentType set to callback, and the confirmed taxProRef and officeRef. A callback only reaches a confirmed Tax Pro; any other request to book, reschedule, or cancel an appointment, or a question about an existing one, returns intent_changed with routingTarget appointment_scheduler, except per the tax_pro_always other-booking item.",
         "On any other booking request with a confirmed Tax Pro, state once that you can book only a callback with them, then offer the callback, the message, or another qualified Tax Pro (routed_to_scheduler, appointmentType null).",
         "An unclear intent is a no-match per global_always; an explicit message request returns leave_message immediately."
     ],
@@ -1567,6 +1567,7 @@ Creates one new appointment.
 Note:
 
 - New-customer contact.callbackNumber is required on phone callbacks.
+- appointmentNotes is null except on callback.
 - peaceOfMindStatus is boolean.
 - textConfirmation.numberSource enums are ani, captured, or profile.
 
