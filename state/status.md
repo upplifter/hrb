@@ -1,6 +1,6 @@
 # Status
 
-Round: 3
+Round: 5
 Clean-sweep counter: 0
 Constitution applied: yes (2026-09-28)
 
