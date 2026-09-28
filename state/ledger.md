@@ -255,3 +255,73 @@ Status values: open, fixed, asked, decided, deferred, rejected, backlog, reverte
 | L-249 | V | global_outcomes.validation_failed | Low | Safe | open | 3 | "a result other than rejected" overlaps change_not_allowed and not_cancelable, mapped to automation_blocked (D-015). |
 | L-250 | V | §2 State 3 Informational Interruptions > Personal Questions | Low | Safe | open | 3 | Bullet omits "resume", which its JSON mirror carries. |
 | L-251 | V | §1.5 terminal_payload_contract | Low | Human | backlog | 3 | 214 words, over the 60-word JSON item limit; fold into L-034. |
+| L-252 | A,B,E | §2 State 2 Appointment Type Rules > Tax Pro Requests; interruptions.intent_change | Medium | Safe | open | 4 | Prose "A request for a specific or own Tax Pro" drops "to speak to" (D-034, JSON mirror), which would hand back returning_same_tax_pro bookings. |
+| L-253 | E | §2 State 5 workflow.cancel_existing[1]; appointment_already_canceled | Medium | Safe | open | 4 | cancel_existing never checks status canceled before the gate (D-021, D-028). |
+| L-254 | B | §2 State 5 closure.line_patterns.handoff_unavailable | Medium | Safe | open | 4 | Else-branch speaks supportHoursSpoken on a failed transfer call, against global_always (D-026). |
+| L-255 | A | §4 State 2 objective | Low | Safe | open | 4 | Objective omits routed_to_scheduler for another Tax Pro and tax_pro_options_declined. |
+| L-256 | C | §3 State 1 Intent Scope & Disambiguation > unclear_intent | Low | Safe | open | 4 | Label "unclear_intent" styled as an enum; the outcome is intent_unclear. |
+| L-257 | C | §4 Fulfillment Priority step 4; workflow.speak_to_tp_generic[4], speak_to_tp_by_name[5] | Low | Safe | open | 4 | Return lists mix nextAction values with a finalOutcome. |
+| L-258 | E | §2 State 5 agent_specific_outcomes.no_acceptable_availability | Low | Safe | open | 4 | Definition omits first-lookup none_nearby (D-015, D-016). |
+| L-259 | E | §5.2 get_customer_appointments Outcome Results (too_many) | Low | Safe | open | 4 | too_many row not updated for D-028 active-or-canceled count. |
+| L-260 | E | §1.5 global_never web-deflection item | Low | Safe | open | 4 | JSON narrower than §1.2: omits website and app-name ban. |
+| L-261 | E | §2 State 5 agent_specific_tools.check_search_readiness | Low | Safe | open | 4 | No conflict branch mirroring the §1.4 conflict-from-readiness row. |
+| L-262 | E | §1.5 context_envelope.appointmentType, taxProRef, officeRef | Low | Safe | open | 4 | Envelope strings omit D-027 precedence over entryPoint and routedOfficeRef. |
+| L-263 | B | §4 No Matches / Inactive; tax_pro_always unavailable item | Low | Safe | open | 4 | Rule says to offer "the Appointment Scheduler", internal architecture §1.2 bans. |
+| L-264 | B | §4 Mini-Dialogue 4D | Low | Safe | open | 4 | Handoff line spoken with no agent_available result, under a "System (Agent)" label (C-9). |
+| L-265 | F | §2 State 5 agent_specific_tools (find_customer, find_offices_near, find_available_slots, book_appointment); workflow.schedule_new[1],[3], reschedule_existing[3] | Low | Safe | open | 4 | F-01: Pointer-only "Apply/Follow the ... rules" sentences (-65w). |
+| L-266 | F | §2 State 5 broadening.principles[6]; §2 State 3 Search Broadening Ladder > Principles | Low | Safe | open | 4 | F-03: Slot-order/CDAS rule restated; tool-ranking sentence (-29w). |
+| L-267 | F | §2 State 5 workflow.cancel_existing[1] | Low | Safe | open | 4 | F-04: Retrieval step duplicates reschedule_existing[1] (-27w). |
+| L-268 | F | §4 State 2 workflow.leave_message[0],[1] | Low | Safe | open | 4 | F-05: Context-pass split across two steps (-20w). |
+| L-269 | F | §2 State 5 scheduler_always tax_notice_service capture item | Low | Safe | open | 4 | F-06: Five notice values listed twice (-20w). |
+| L-270 | F | §2 State 5 scheduler_always three-sentence readback item; §2 State 4 Chunked Readback | Low | Safe | open | 4 | F-07: Sentence positions spelled out (-20w). |
+| L-271 | F | §2 State 5 workflow.schedule_new[5] | Low | Safe | open | 4 | F-08: Booking step restates payload rules (-19w). |
+| L-272 | F | §1.5 global_always no-input item | Low | Safe | open | 4 | F-09: Restates consecutive_silence outcome (-15w). |
+| L-273 | F | §4 Mini-Dialogue 4A last System turn | Low | Safe | open | 4 | F-11: System line explains flow internals (-14w). |
+| L-274 | F | §2 State 5 scheduler_always office identity item | Low | Safe | open | 4 | F-12: Lists every pre-commit phase (-13w). |
+| L-275 | F | §2 State 5 scheduler_always reschedule changing item | Low | Safe | open | 4 | F-13: Repeats "if ... differs" four times (-13w). |
+| L-276 | F | §5.2 find_customer intro; Note | Low | Safe | open | 4 | F-14: Read-only and status enum stated twice (-13w). |
+| L-277 | F | §2 State 5 closure.continuation_context | Low | Safe | open | 4 | F-15: Restates priorTransaction rules (-12w). |
+| L-278 | F | §5.3 check_office_open_status intro | Low | Safe | open | 4 | F-16: Lists tool inputs (-12w). |
+| L-279 | F | §1.5 global_never message item | Low | Safe | open | 4 | F-17: Ownership explanation sentence (-11w). |
+| L-280 | F | §1.5 Universal Base JSON Prompt intro | Low | Safe | open | 4 | F-18: Lists the block's contents (-11w). |
+| L-281 | F | §2 State 2 DDO Rules > Rescheduling; Complexity Matching > Guardrails | Low | Safe | open | 4 | F-19: Duplicate DDO clause and rationale clause (-11w). |
+| L-282 | F | §2 State 5 scheduler_never profile item | Low | Safe | open | 4 | F-20: Lists pre-commit phases (-10w). |
+| L-283 | F | §5.2 book_appointment intro | Low | Safe | open | 4 | F-21: "point of no return" softener (-10w). |
+| L-284 | F | §2 State 3 Search Broadening Ladder intro | Low | Safe | open | 4 | F-22: Restates one-constraint principle (-9w). |
+| L-285 | F | §2 State 5 workflow.reschedule_existing[2] | Low | Safe | open | 4 | F-23: Type/method bar stated twice (-9w). |
+| L-286 | F | §2 State 5 scheduler_always isCDAS item | Low | Safe | open | 4 | F-24: Two conditionals for one definition (-8w). |
+| L-287 | F | §2 State 5 closure.re_entry | Low | Safe | open | 4 | F-25: Restates the one-transaction limit (-7w). |
+| L-288 | C,D | §2 State 5 closure.re_entry; scheduler_always idempotency item; §5.2 send_secure_link | High | Human | open | 4 | Fresh key namespace on re-entry cannot be built; a DDO change reuses interactionId-ddo-1 and is deduplicated. |
+| L-289 | A | §1.3 Leave-a-Message Ownership; §1.4 agent_unavailable message-available row; closure.line_patterns.handoff_unavailable | High | Human | open | 4 | Spec gives the message offer and support hours to the Leave a Message flow, which has neither; Head of Call has no leave_message_offer node. |
+| L-290 | A | §4 No Matches / Inactive; §2 State 2 Tax Pro Requests; interruptions.intent_change | High | Human | open | 4 | A callback request with no reachable Tax Pro bounces between Part 4 and the Scheduler with no bound. |
+| L-291 | B,D | §2 State 5 interruptions.cancel_said; global_outcomes.intent_changed | Medium | Human | open | 4 | Post-commit cancel request hands back intent_changed with no routingTarget or operation. |
+| L-292 | D,E | §2 State 5 interruptions.cancel_said; §2 State 4 Write Tools > cancel_appointment | Medium | Human | open | 4 | Cancel scope: "mid-booking" vs "before any commit"; gate "no, cancel that" matches cancel_said and gate-no. |
+| L-293 | C | §1.5 terminal_payload_contract; §1.2 No-Match Rule; §3 unclear_intent | Medium | Human | open | 4 | intent_unclear and the No-Match Rule both claim an unresolved intent answer. |
+| L-294 | C | §1.5 global_outcomes.intent_unclear | Medium | Human | open | 4 | No intent value when Part 3 cannot tell office_info from office_contact. |
+| L-295 | C | §1.5 global_outcomes.intent_unclear; terminal_payload_contract capture_intent | Medium | Human | open | 4 | intent_unclear returns capture_intent after the caller was served. |
+| L-296 | C | §1.5 terminal_payload_contract intent enum; global_outcomes.no_approved_answer | Medium | Human | open | 4 | intent informational has no serving agent after question_answered was deleted. |
+| L-297 | C | §1.5 global_outcomes.customer_abandoned | Medium | Human | open | 4 | transactionOccurred false and no committed ref after a drop during post-commit readback. |
+| L-298 | C | §4 Generic Request; workflow.speak_to_tp_generic[3]; Part 5 Conventions priorTaxProStatus | Medium | Human | open | 4 | Generic path checks activeStatus and takingAppointmentsInd, which find_customer does not return. |
+| L-299 | C | §3 agent_specific_tools.transfer_to_agent; §5.3 get_office_details office_not_found | Medium | Human | open | 4 | office_not_found on a caller-given ZIP transfers as system_failure; Scheduler reprompts the same input. |
+| L-300 | D | §1.5 global_always followUpTopics item; interruptions.informational_question | Medium | Human | open | 4 | KB non-answer mid-booking returns terminal no_approved_answer instead of resuming. |
+| L-301 | D | §2 State 5 scheduler_always find_offices_near item (invalid_constraints) | Medium | Human | open | 4 | invalid_constraints to readiness loop has no cap; rule sits in the wrong tool item. |
+| L-302 | D | §2 State 4 Post-Commit Readback; closure.re_entry | Medium | Human | open | 4 | A post-commit change request has no path. |
+| L-303 | D | §3 Standard Blurb; workflow.office_info_flow[3]; §1.3 Yield rule | Medium | Human | open | 4 | Office info has no stop trigger after follow-ups; silence ends as consecutive_silence. |
+| L-304 | D | §3 Named Office; office_always named-office item | Medium | Human | open | 4 | Named-office match ignores the top-level office the ZIP resolves to. |
+| L-305 | D | §3 workflow.office_contact_flow; If CLOSED | Medium | Human | open | 4 | office_contact ignores seasonalStatus; closed_for_season caller hears no Year-Round Office. |
+| L-306 | B,D | §4 By Name Request > 1 Match; workflow.speak_to_tp_by_name; §1.2 Confirmed by consequence | Medium | Human | open | 4 | Single match "Confirm the Tax Pro": spoken confirm or internal; no branch for a caller no. |
+| L-307 | D | §2 State 5 workflow.schedule_new[1]; Declined Offices | Medium | Human | open | 4 | Returning caller who keeps the Tax Pro but rejects the last-served office has no path to nearby offices. |
+| L-308 | A | §1.1 knownPreferences; workflow.schedule_new[2] | Medium | Human | open | 4 | Scheduler captures a Tax Pro preference it cannot resolve after D-027. |
+| L-309 | A | §1.5 global_always informational item; §5.1 Category Enums | Medium | Human | open | 4 | Identity/fraud and other-department contact questions have no owner. |
+| L-310 | A | §1.5 global_always KB item and informational item | Medium | Human | open | 4 | tax_prep_and_records questions have two owners (KB in-agent vs faq_agent). |
+| L-311 | A | §2 State 5 scenario_selection items 2-4; ladders.reschedule | Medium | Human | open | 4 | Callback and physical drop-off reschedules use a ladder with Tax Pro and nearby-office rungs. |
+| L-312 | A | §4 Out-of-Scope (New Appointment); interruptions.intent_change | Medium | Human | open | 4 | Part 4 names no routingTarget for reschedule, cancel, or non-tax_prep booking requests. |
+| L-313 | A | §1.1 entryReason; context_envelope.entryReason | Medium | Human | open | 4 | Refund-status C-28 TRANSFER handoff to the Scheduler has no entryReason. |
+| L-314 | A | §2 State 5 objective; global_always informational item | Medium | Human | open | 4 | Appointment-details questions ("when is my appointment?") have no owner. |
+| L-315 | E | §1.5 global_always transfer-results item; global_outcomes.outcome_unknown | Medium | Human | open | 4 | Failed transfer call on outcome_unknown loses the outcome name and idempotencyKey. |
+| L-316 | E | §1.4 handoff_invalid or configuration_missing row; global_outcomes.handoff_invalid, configuration_missing | Medium | Human | open | 4 | Unclear whether these call transfer_to_agent or hand back without a call. |
+| L-317 | B | §2 State 3 Personal Questions; search_knowledge_base; scheduler_never | Medium | Human | open | 4 | "Tax Pro covers it at the appointment" said on cancel, DDO, and physical drop-off paths. |
+| L-318 | B | §2 Mini-Dialogue 1A | Low | Human | backlog | 4 | First turn lacks a one-line purpose; fix adds caller-heard words to a frozen line. |
+| L-319 | B | §2 Mini-Dialogue 2A, 2B last Agent turns | Low | Human | backlog | 4 | Latency bridges outside preamble_phrases (frozen). |
+| L-320 | F | §1.3 Leave-a-Message Ownership fourth bullet | Low | Safe | backlog | 4 | F-10: flow-internals list; held for L-289 ownership question. |
+| L-321 | F | Part 5 Conventions (Request, Response, Read result first) | Low | Human | backlog | 4 | F-02: trim -39w; anchor edited in rounds 1-3, oscillation guard. |
