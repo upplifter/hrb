@@ -778,7 +778,7 @@ Secure explicit consent before executing any write tool.
     "interruptions": {
         "informational_question": "Resume at the first unanswered requirement, or at the gate if the readback was already in progress.",
         "cancel_said": "If the caller asks to cancel an existing appointment before any commit, abandon the booking and run the cancel_existing workflow in full. 'Cancel this booking' at a gate is a gate no. After a commit, a cancel or change request hands back intent_changed with routingTarget appointment_scheduler and the committed reference.",
-        "intent_change": "Outside scheduling, other than a cancellation, a live-agent request, or a global_always identity question, hand back intent_changed; never transfer or attempt it. A request for a specific or own Tax Pro, a named Tax Pro other than the prior or carried one, or a callback with no carried taxProRef takes routingTarget speak_to_tax_pro, except per the scheduler_always routed_to_scheduler item."
+        "intent_change": "Outside scheduling, except a cancellation, live-agent request, or identity-theft, fraud, or other-department question, hand back intent_changed; never transfer or attempt it. A request for a specific or own Tax Pro, a named Tax Pro other than the prior or carried one, or a callback with no carried taxProRef takes routingTarget speak_to_tax_pro, except per the scheduler_always routed_to_scheduler item."
     },
     "agent_specific_outcomes": {
         "new_appointment_scheduled": "Definite booking success. Carry newAppointmentRef, confirmationNumber, and confirmedSummary. transactionOccurred true, callContained true, nextAction offer_additional_help, intent schedule_appointment.",
@@ -902,7 +902,7 @@ Answer office hours, location, and directions questions, and triage requests to 
         "search_knowledge_base": "Per global_always."
     },
     "interruptions": {
-        "intent_change": "Outside office information, other than a live-agent request or a global_always identity question, hand back intent_changed."
+        "intent_change": "Outside office information, other than a live-agent request or an identity-theft, fraud, or other-department question, hand back intent_changed."
     },
     "agent_specific_outcomes": {
         "office_info_provided": "Caller received requested hours, address, directions, or phone number. transactionOccurred false, callContained true, nextAction offer_additional_help, intent office_info.",
@@ -1042,7 +1042,7 @@ Once a Tax Pro is confirmed:
         "search_knowledge_base": "Per global_always."
     },
     "interruptions": {
-        "intent_change": "Outside reaching a Tax Pro, other than a live-agent request or a global_always identity question, hand back intent_changed."
+        "intent_change": "Outside reaching a Tax Pro, other than a live-agent request or an identity-theft, fraud, or other-department question, hand back intent_changed."
     },
     "agent_specific_outcomes": {
         "routed_to_scheduler": "Caller opted for a callback (appointmentType callback, with taxProRef and officeRef) or, after an unavailable Tax Pro, for another Tax Pro (appointmentType null, with officeRef only when known; otherwise the Scheduler resolves the office). transactionOccurred false, callContained true, nextAction route_intent, routingTarget appointment_scheduler, intent speak_to_tax_pro.",

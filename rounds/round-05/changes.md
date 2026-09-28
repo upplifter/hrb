@@ -24,3 +24,7 @@ L-342 | §2 State 3 Tax Pro Trade-off | "Never substitute a Tax Pro silently." c
 L-343 | interruptions.cancel_said | "closes the committed transaction and" cut (intent_changed covers it) | -5
 L-344 | scheduler_always text-offer item | "self-service" became "first-party" | 0
 L-345 | §5.2 find_customer Note | "Note: priorTaxProStatus is never spoken." | -6
+
+## Follow-up from verify.md
+
+L-329 (follow-up) | interruptions.intent_change in Parts 2, 3, and 4 | "a global_always identity question" became "identity-theft, fraud, or other-department question"; Scheduler item trimmed to 60 words | +9

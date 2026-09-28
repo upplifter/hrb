@@ -70,3 +70,14 @@ Constitution applied: yes (2026-09-28)
 - Verifier: 32 pass, 7 fix-needed (L-316, L-243, L-305, L-303, L-317, L-306, one brevity trim); all fixed on follow-up, 0 reverted.
 - New items from verification: L-322, L-323, L-324 (Medium, Human, open); L-325 (Low, Human, open).
 - Size: 16791 words (lint), 134433 bytes. Round growth +0.97% (limit 1.0%). Lint: RESULT WARN, no FAIL.
+
+## Round 5
+- Findings: 6 lens files, 69 raw findings merged into ledger rows L-326 to L-368 (43). Medium 17 (4 Safe, 13 Human), Low 26.
+- Safe fixed: 20 (L-326 to L-345). Verifier: 19 pass, 1 fix-needed (L-329), fixed on follow-up, 0 reverted.
+- Oscillation guard: 11 editorial items on anchors edited in 3 earlier rounds went to the backlog (L-346 to L-356). L-326 and L-327 were applied as propagation of D-048 and D-043 on anchors those decisions name.
+- Questions asked: 11 (rounds/round-05/questions.md, Q-49 to Q-59), covering L-322 to L-325 and L-357 to L-368.
+- Backlog: L-176 closed by L-327; L-346 to L-356 added.
+- Carried Human items for round 6: L-074 to L-164 not yet asked, and L-192.
+- Size vs baseline: 16705 words (-0.89% by lint), 133920 bytes. Round growth -0.38%.
+- Lint: RESULT WARN, no FAIL.
+- Sweep clean: no (new Medium findings and questions). Clean-sweep counter: 0.
