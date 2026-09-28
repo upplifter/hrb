@@ -332,7 +332,7 @@ Establish the Appointment Type first; it sets permitted methods, office eligibil
 - **Capture:** Establish Type before Method and before any office lookup. Never infer it.
 - **Immutability:** Type and method cannot be changed on a reschedule. If requested, preserve the appointment and call `transfer_to_agent` with transferReason automation_blocked.
 - **Eligibility:** Gates office selection via acceptsAppointmentType.
-- **Tax Pro Requests:** A request for a specific or own Tax Pro, a named Tax Pro neither prior nor carried, or a callback with no carried taxProRef returns intent_changed to speak_to_tax_pro, except After Part 4.
+- **Tax Pro Requests:** Requests for a specific or own Tax Pro, a named Tax Pro neither prior nor carried, or a callback without carried taxProRef return intent_changed to speak_to_tax_pro, except as After Part 4 lists.
 - **After Part 4:** When priorTransaction.finalOutcome is routed_to_scheduler and no appointmentType is carried:
     - Book a callback request as a tax_prep phone_callback appointment, with the reason as on callback. Never hand it back.
     - On a request for their own Tax Pro or the one named in Part 4, state once this booking is with another Tax Pro and continue. A second request returns customer_declined_options; never hand back.
@@ -343,7 +343,7 @@ Establish the Appointment Type first; it sets permitted methods, office eligibil
 | emerald_advance | In-person ONLY | Skip complexity screening. Send taxProRatingFloor = 1. Tool owns season window. If closed, state it isn't available now and return customer_declined_options. |
 | tax_notice_service | In-person, Phone, Virtual. DDO only as the broadening fallback. | Require the five notice values. Skip complexity screening. Send taxProRatingFloor = 1. Send credentialRequired = ["EA", "CPA"]. Offer in-person first when asking the method. |
 | tax_extension | In-person, Phone, Virtual | Tool owns filing window. If closed, offer tax_prep; a decline returns customer_declined_options. |
-| callback | phone_callback | 15-minute CDAS callback. Capture the reason for the call as one short phrase in appointmentNotes. Skip complexity screening. Send taxProRatingFloor = 1. |
+| callback | phone_callback | 15-minute CDAS callback. Skip complexity screening. Send taxProRatingFloor = 1. On any phone_callback, of any type, capture the reason for the call as one short phrase in appointmentNotes. |
 
 **Tax Notice Services Guardrails**
 
@@ -784,7 +784,7 @@ Secure explicit consent before executing any write tool.
         "find_customer": "Read-only identity resolution and third-party authentication.",
         "get_customer_appointments": "Read-only. Call only after authentication, on reschedule_existing, cancel_existing, or an appointment-details question. For that question, read each date, time, and office, say a canceled one is canceled, and say nothing is on file on none_found; mid-booking, resume per interruptions.informational_question, else return appointment_details_provided.",
         "find_offices_near": "Confirm an eligible office once the method is known and after any location or method change. On a nearby-office rung, call with nearOfficeRef set to the current office and excludeOfficeRefs set to offices already offered, and pass the returned officeRef values, up to three, as nearbyOfficeRefs.",
-        "check_search_readiness": "Call only after authentication and once enough constraints are captured; never on the digital drop-off no-slot path. On needs_more, ask only the askFor item. On out_of_scope, call transfer_to_agent with transferReason out_of_scope. On conflict, speak the global_voice_lexicon.empathy past-date line for a past date; for a closed window, follow the appointment-type item.",
+        "check_search_readiness": "Call only after authentication and once enough constraints are captured; never on the digital drop-off no-slot path. On needs_more, ask only the askFor item. On out_of_scope, call transfer_to_agent with transferReason out_of_scope. On conflict, speak the global_voice_lexicon.empathy past-date line for a past date; for a closed window, follow the emerald_advance or tax_extension item.",
         "find_available_slots": "Read-only. Call only on ready and after authentication. The tool owns ranking and duration and applies the rating floor. Send scenario and rung from broadening. Treat suggest as informational; the scenario ladder governs. Never offer a slot with a non-null relaxedConstraint unless the caller consented to that rung. On invalid_constraints, re-run readiness once; a second invalid_constraints transfers as system_failure.",
         "book_appointment": "Write once per confirmed slot after a full readback and an explicit yes.",
         "reschedule_appointment": "Write once after the two-beat before-and-after readback, current appointment in one sentence, proposed change in the next, unchanged elements collapsed, and an explicit yes.",
@@ -1386,7 +1386,7 @@ Says whether the gathered constraints are enough for a useful availability searc
     "requestedTimeSource": "existing_appointment",
     "taxProPreference": {
         "taxProRef": "tp-496951",
-        "source": "caller_stated"
+        "source": "existing_appointment"
     }
 }
 ```
@@ -1408,7 +1408,7 @@ Says whether the gathered constraints are enough for a useful availability searc
         "appointmentMethod": "in_person",
         "taxProRatingFloor": 4,
         "taxProRef": "tp-496951",
-        "taxProSource": "caller_stated",
+        "taxProSource": "existing_appointment",
         "isSameDay": false
     },
     "askFor": null,
@@ -1526,7 +1526,7 @@ Creates one new appointment.
     "customerRef": "cst-8f21c4",
     "slotRef": "slt-0091",
     "appointmentType": "tax_prep",
-    "appointmentMethod": "phone_callback",
+    "appointmentMethod": "in_person",
     "taxNoticeDetails": null,
     "appointmentNotes": null,
     "textConfirmation": {

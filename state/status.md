@@ -115,3 +115,18 @@ Constitution applied: yes (2026-09-28)
 - Lint: RESULT WARN, no FAIL.
 - Sweep clean: no (new High and Medium findings and questions). Clean-sweep counter: 0.
 - Note: fixes applied by the orchestrator from fully specified replacement text; reviewers and verifier returned findings in their replies.
+
+## Round 7 answers (applied before round 8)
+- 11 answers recorded as D-073 to D-083 (D-081 supersedes D-051); L-136 rejected (Q-76). 14 items closed.
+- Fields approved and added: officeRef, taxProRef, date, requestedTime on each get_customer_appointments appointment (D-073). No outcome, nextAction, or routingTarget added or removed.
+- Verification by the orchestrator: all pass. Growth +0.90% for the batch (D-076 budget exception approved, not needed).
+
+## Round 8 (final round under C-12)
+- Findings: 6 lens files, 22 raw findings merged into ledger rows L-412 to L-424 (13). Medium 9 (2 Safe, 7 Human), Low 4.
+- Safe fixed: 5 (L-412 to L-416), all pass verification, 0 reverted.
+- Oscillation guard: L-417 (schedule_new[1] trim) to the backlog.
+- Questions asked: 12 (rounds/round-08/questions.md, Q-84 to Q-95), covering L-395, L-397, L-398, L-399, L-401, L-404, L-418 to L-424. L-396, L-400, L-402, L-403 are listed there without a question slot.
+- Size: 17,279 words (lint), 138,291 bytes. Round growth +0.05%. Total growth +2.35% (limit 5%).
+- Lint: RESULT WARN, no FAIL.
+- Sweep clean: no (new Medium findings and questions). Clean-sweep counter: 0.
+- Round cap reached; rounds/FINAL.md written.
