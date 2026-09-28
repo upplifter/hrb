@@ -12,10 +12,10 @@ Low findings and deferred items. They do not block the exit.
 - L-198 | §5.1 search_knowledge_base attempt | attempt value on clarifier re-query undefined | Human, Low.
 - L-223 | §3 If OPEN; By-Appointment-Only | Editorial trim held until L-186 and L-081 are decided | Safe, Low.
 - L-237 | §2 State 2 Tax Extension bullet | Heading home ambiguous | Human, Low.
-- L-246 | §5.1 search_knowledge_base KB results | requires_tax_pro outside the Scheduler: D-025 vs D-034 | Human, Low.
+- L-246 | §5.1 search_knowledge_base KB results | requires_tax_pro outside the Scheduler: D-025 vs D-034 | Human, Low. Decided D-046, fixed.
 - L-248 | agent_specific_outcomes.customer_declined_options | "requesting a person" ambiguous after D-034 | Human, Low.
 - L-251 | §1.5 terminal_payload_contract | 214 words; fold into L-034 restructure | Low.
 - L-318 | §2 Mini-Dialogue 1A | No one-line purpose; fix adds words to a frozen line | Human, Low.
 - L-319 | §2 Mini-Dialogue 2A, 2B | Latency bridges outside preamble_phrases | Human, Low.
-- L-320 | §1.3 Leave-a-Message Ownership | F-10 trim held until L-289 is decided | Safe, Low.
+- L-320 | §1.3 Leave-a-Message Ownership | F-10 trim held until L-289 is decided | Safe, Low. Decided D-039, fixed.
 - L-321 | Part 5 Conventions | F-02 trim; oscillation guard (edited rounds 1-3) | Human, Low.
