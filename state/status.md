@@ -44,3 +44,10 @@ Constitution applied: yes (2026-09-28)
 - Lint: RESULT WARN, no FAIL.
 - Sweep clean: no (new Medium findings and questions). Clean-sweep counter: 0.
 - Note: reviewers again could not write findings files; the orchestrator saved them from the replies.
+
+## Round 3 answers (applied before round 4)
+- 12 answers recorded as D-026 to D-037; 38 items fixed (L-072, L-098, L-142, L-151 to L-154, L-165, L-170 to L-175, L-177 to L-182, L-184 to L-186, L-190, L-191, L-193 to L-196, L-199 to L-206, L-210).
+- New outcomes approved and added: `intent_unclear`, `tax_pro_options_declined`. Deleted: `office_info_transfer`, `question_answered`.
+- Verifier: 33 pass, 4 fix-needed (L-174, L-177, L-182, L-202); all 4 fixed on follow-up, 0 reverted.
+- New items from verification: L-238 to L-244 (Medium, Human, open); L-245, L-247, L-249, L-250 (Low, Safe, open); L-246, L-248, L-251 to backlog.
+- Size: 16690 words, 133148 bytes. Round growth +0.97% (limit 1.0%). Lint: RESULT WARN, no FAIL.

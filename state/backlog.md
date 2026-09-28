@@ -12,3 +12,6 @@ Low findings and deferred items. They do not block the exit.
 - L-198 | §5.1 search_knowledge_base attempt | attempt value on clarifier re-query undefined | Human, Low.
 - L-223 | §3 If OPEN; By-Appointment-Only | Editorial trim held until L-186 and L-081 are decided | Safe, Low.
 - L-237 | §2 State 2 Tax Extension bullet | Heading home ambiguous | Human, Low.
+- L-246 | §5.1 search_knowledge_base KB results | requires_tax_pro outside the Scheduler: D-025 vs D-034 | Human, Low.
+- L-248 | agent_specific_outcomes.customer_declined_options | "requesting a person" ambiguous after D-034 | Human, Low.
+- L-251 | §1.5 terminal_payload_contract | 214 words; fold into L-034 restructure | Low.

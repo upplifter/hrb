@@ -36,3 +36,7 @@ L-210 | global_voice_lexicon.prohibited_phrases | "transfer you to" narrowed to 
 L-172 | global_voice_lexicon.reprompt | Year reprompt line deleted (D-036) | -12
 L-190 | §2 State 3 Search Broadening Ladder intro; broadening.principles last item; §5.2 find_available_slots rung Note | Accepting digital_drop_off ends the search and runs the DDO path; digital_drop_off removed from rung values (D-037) | +31
 L-072 | broadening.scenario_selection[0] | Step 2 drop-off method and prior Tax Pro choice recorded at workflow.schedule_new[1]; first match wins after ready (D-037) | +19
+L-174 (follow-up) | global_outcomes.transfer_unavailable | leaveMessageAvailable speech and nextAction scoped to agent_unavailable; failed call points to global_always transfer-results item; now 59 words (D-026) | -1
+L-177 (follow-up) | §2 State 2 Appointment Type Rules > Tax Pro Requests | "A request to speak to a Tax Pro" narrowed to a specific or own Tax Pro, matching interruptions.intent_change; bullet kept at 35 words (D-027, D-034) | +0
+L-182 (follow-up) | global_always informational item; §1.2 Tax/Financial Boundary sub-bullet | Personal tax questions go to speak_to_tax_pro only from office_information (not "outside the Scheduler"), so Part 4 no longer hands back to itself (D-034) | -2
+L-202 (follow-up) | §3 Office Details Logic > By-Appointment-Only | Imperatives restored: never quote standard hours or ask whether to book (D-032) | +1
