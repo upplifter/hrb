@@ -1,0 +1,39 @@
+{
+  "bullet_max_words": 35,
+  "bullet_max_sentences": 2,
+  "para_max_words": 60,
+  "para_max_sentences": 3,
+  "json_item_max_words": 60,
+  "spoken_turn_max_sentences": 3,
+  "dup_min_words": 10,
+  "dup_threshold": 0.8,
+  "round_growth_max_pct": 1.0,
+  "total_growth_max_pct": 5.0,
+  "style_terms": [
+    "should",
+    "the agent will",
+    "it is recommended",
+    "a few",
+    "as needed",
+    "facilitate",
+    "leverage",
+    "utilize",
+    "\u2014",
+    "\u201c",
+    "\u201d"
+  ],
+  "web_terms": [
+    "online",
+    "website",
+    "web site",
+    "url",
+    "portal",
+    "app",
+    "myblock",
+    ".com"
+  ],
+  "max_rounds": 8,
+  "max_questions_per_round": 12,
+  "exit_blocking_min_severity": "Medium",
+  "seed_from_audit_round1": true
+}
