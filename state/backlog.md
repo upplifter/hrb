@@ -44,3 +44,8 @@ Low findings and deferred items. They do not block the exit.
 - L-410 | Round 7 F-01, F-02, F-07, F-14, F-15, F-17, F-20 (Conventions) | Editorial trims on guarded anchors, about -57 words | Low (round 7, oscillation guard).
 - L-411 | Round 7 F-04, F-05, F-11 | Trims of round 6 decision text, about -28 words | Low (round 7, held).
 - L-417 | workflow.schedule_new[1] | 62 words, over the 60-word JSON limit; trim in round 8 findings-F F-04 | Low (round 8, oscillation guard).
+- L-445 | workflow.schedule_new[2] | "method-specific contact detail" has no referent after D-093 | Human, Low.
+- L-446 | §5.2 get_customer_appointments Outcome Results | "active or canceled" repeated; oscillation guard | Safe, Low.
+- L-447 | §2 State 2 After Part 4 first sub-bullet | Redundant callback-reason pointer; oscillation guard | Human, Low.
+- L-448 | §4 Generic Request | 36 words; oscillation guard | Human, Low.
+- L-449 | §1.2 Tax/Financial Boundary; §4 Out-of-Scope (FAQ Agent) | D-097 term mismatch and omission | Human, Low.

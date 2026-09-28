@@ -428,3 +428,28 @@ Status values: open, fixed, asked, decided, deferred, rejected, backlog, reverte
 | L-422 | D | scheduler_always efile_rejection_retail item | Medium | Human | decided | 8 | efile entry proposes an inactive prior Tax Pro. |
 | L-423 | D,F | agent_specific_tools.check_search_readiness; §2 State 3 Readiness Cap; §5.2 conflict | Medium | Human | decided | 8 | A conflict that is neither a past date nor a closed type window has no first response. |
 | L-424 | D | invalidation.partial_acceptance; ladder_state; scenario_selection | Medium | Human | decided | 8 | Widening after D-074 names no scenario or rung. |
+| L-425 | A,B,C,D,E,F | §3 State 2 office_never[0] | Medium | Safe | fixed | 9 | Still sent every appointment question to the Scheduler after D-097. |
+| L-426 | E | §2 State 2 Complexity Matching > Reschedule | Medium | Safe | fixed | 9 | Prose omitted the D-095 raise to taxProCertLevel. |
+| L-427 | A,D | scheduler_always gatekeeper item | Medium | Safe | fixed | 9 | Gatekeeper still asked on reschedule_existing (D-095). |
+| L-428 | A,C,D,E | workflow.schedule_new[1] | Medium | Safe | fixed | 9 | Keep-prior question had no Part 4 exception (D-084). |
+| L-429 | B | broadening.ladders.same_day.rungs[1] | Medium | Safe | fixed | 9 | office_at_capacity line spoken with no trigger (L-392 trim). |
+| L-430 | B | invalidation.ladder_state | Medium | Safe | fixed | 9 | Read as wiping identity on every restart. |
+| L-431 | B | §4 agent_specific_tools.transfer_to_agent | Low | Safe | fixed | 9 | Omitted the D-091 multiple_matches transfer. |
+| L-432 | B | §2 State 3 Mini-Dialogue 3B | Low | Safe | fixed | 9 | DDO offered by text only, against D-099. |
+| L-433 | F | agent_specific_tools write entries | Low | Safe | fixed | 9 | Repeated the explicit-yes rule 4x. |
+| L-434 | F | §2 State 1 Authentication Logic > Third-Party | Low | Safe | fixed | 9 | Restated the D-086 readback. |
+| L-435 | F | workflow.speak_to_tp_by_name[3] | Low | Safe | fixed | 9 | Vague "if needed". |
+| L-436 | F | §2 State 2 Complexity Matching > Returning Client | Low | Safe | fixed | 9 | Bullet over 35 words. |
+| L-437 | C,F | §2 State 3 Informational Interruptions > Hand back | Low | Safe | fixed | 9 | Term mismatch for the D-097 category. |
+| L-438 | A,C,D | workflow.reschedule_existing[3]; §2 Complexity Matching > Reschedule; scheduler_always floor-1 item; §2 type table; §5.2 Callbacks | High | Human | asked | 9 | D-095 floor conflicts with the fixed floor 1 on emerald_advance, tax_notice_service, callback. |
+| L-439 | C | §1.5 terminal_payload_contract taxProRef/officeRef clause; §4 routed_to_scheduler | Medium | Human | asked | 9 | "officeRef on either handoff" omits Part 4's another-Tax-Pro handoff. |
+| L-440 | A | §2 State 2 After Part 4; scheduler_always routed_to_scheduler item | Medium | Human | asked | 9 | Scheduler cannot identify the Part 4-named Tax Pro after D-085. |
+| L-441 | D | §2 State 1 Dynamic State Invalidation: Identity; invalidation.customer_identity | Medium | Human | asked | 9 | Subject switch with a carried customerRef may not clear carried values (D-092). |
+| L-442 | D | invalidation.partial_acceptance; ladder_state; scenario_selection items 8-9 | Medium | Human | asked | 9 | A rejected prior Tax Pro is re-selected on the next constraint change (D-090). |
+| L-443 | D | invalidation.partial_acceptance; scheduler_never slot-order item; §5.2 find_available_slots | Medium | Human | asked | 9 | The widened search can return the rejected Tax Pro and the agent may not filter. |
+| L-444 | A | §2 State 2 Tax Pro Requests; interruptions.intent_change | Medium | Human | asked | 9 | "to speak to" dropped after L-252 (round 7 decided commit); oscillation guard. |
+| L-445 | C | workflow.schedule_new[2] | Low | Human | backlog | 9 | "method-specific contact detail" has no referent after D-093. |
+| L-446 | F | §5.2 get_customer_appointments Outcome Results | Low | Safe | backlog | 9 | "active or canceled" repeated 4x; oscillation guard. |
+| L-447 | F | §2 State 2 After Part 4 first sub-bullet | Low | Human | backlog | 9 | Redundant "with the reason as on callback"; oscillation guard. |
+| L-448 | F | §4 Generic Request | Low | Human | backlog | 9 | 36 words; oscillation guard. |
+| L-449 | C,F | §1.2 Tax/Financial Boundary sub-bullet; §4 Out-of-Scope (FAQ Agent) | Low | Human | backlog | 9 | Term mismatch in §1.2 (guard); §4 FAQ list omits the D-097 category. |

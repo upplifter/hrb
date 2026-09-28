@@ -1,5 +1,7 @@
 # Final summary
 
+> Superseded: the round cap was raised to 10 (C-12) and the loop resumed with round 9. See state/status.md and rounds/round-09/questions.md. This file will be rewritten when the loop stops again.
+
 The loop stopped at the round cap (C-12: 8 rounds). It did not reach two clean sweeps. The round 8 answers were applied after the cap.
 
 ## Result

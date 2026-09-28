@@ -1,6 +1,6 @@
 # Status
 
-Round: 7
+Round: 9
 Clean-sweep counter: 0
 Constitution applied: yes (2026-09-28)
 
@@ -138,3 +138,13 @@ Constitution applied: yes (2026-09-28)
 - Size: 17,454 words (lint), 139,494 bytes. Round growth +0.92% (limit 1.0%). Total growth +3.24% (limit 5%).
 - Lint: RESULT WARN, no FAIL.
 - No Medium-or-higher item is open. Backlog (Low) remains.
+
+## Round 9 (cap raised to 10 rounds, C-12, 2026-09-28)
+- Findings: 6 lens files, 36 raw findings merged into ledger rows L-425 to L-449 (25). High 1, Medium 12 (6 Safe, 6 Human), Low 12.
+- Safe fixed: 13 (L-425 to L-437). Orchestrator verification: all pass, 0 reverted. L-428 applied as D-084 propagation on an anchor L-418 names.
+- Oscillation guard: L-444 (Tax Pro Requests) reclassified Human; L-446 to L-448 to the backlog.
+- Questions asked: 6 (rounds/round-09/questions.md, Q-96 to Q-101), covering L-438 to L-444, including the High L-438.
+- Backlog added: L-445 to L-449.
+- Size: 17,454 words (lint), 139,623 bytes. Round growth +0.09%. Total growth +3.33% (limit 5%).
+- Lint: RESULT WARN, no FAIL.
+- Sweep clean: no (new High and Medium findings and questions). Clean-sweep counter: 0.
