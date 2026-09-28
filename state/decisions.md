@@ -86,3 +86,19 @@ D-080 | First-party names are never read back; §1.2 Confirmed at capture stands
 D-081 | After a Part 4 routed_to_scheduler, a request for the caller's own Tax Pro or the Tax Pro named in Part 4 gets one statement that this booking is with another Tax Pro, then booking continues; a second request returns `customer_declined_options`; never hand back. Supersedes D-051. | Q-81 | L-383
 D-082 | In the Scheduler, a message request outside transfer_unavailable that names no recipient hands back to speak_to_tax_pro; office staff still goes to office_information (D-067). | Q-82 | L-384
 D-083 | Capture the one-phrase reason in appointmentNotes on any phone_callback, including a Part 4 callback request booked as tax_prep; appointmentNotes is null except on a phone_callback. | Q-83 | L-385
+D-084 | After a Part 4 routed_to_scheduler, never ask whether to keep the prior Tax Pro; the scenario follows scenario_selection. Supersedes the D-050 "still asks" clause. | Q-84 | L-418
+D-085 | The terminal payload carries taxProRef only on a handoff to leave a message or to appointment_scheduler for a callback; officeRef is carried on either handoff. | Q-85 | L-419
+D-086 | Confirm at capture a third-party owner's name (global_always and §1.2); a phone_callback reason is never read back; scheduler_always drops its own name-confirm sentence. | Q-86 | L-420, L-401
+D-087 | A free acknowledgment uses only an empathy line that promises no person; every other empathy line is spoken only on its own path. | Q-87 | L-421
+D-088 | The efile_rejection_retail item proposes the prior Tax Pro only when priorTaxProStatus is active. | Q-88 | L-422
+D-089 | A readiness conflict that is neither a past date nor a closed window asks once for another date or time; the Readiness Cap applies. | Q-89 | L-423
+D-090 | Rejecting a proposed Tax Pro while keeping the office is a caller-initiated change under ladder_state; returning_same_tax_pro re-selects returning_tax_pro_unavailable at that office, other scenarios restart at their primary offer. | Q-90 | L-424
+D-091 | In Part 4, a find_customer multiple_matches transfers as identity_unresolved with the §1.4 multiple_matches line. | Q-91 | L-398
+D-092 | A customer identity change also clears the carried customerRef, appointmentType, taxProRef, and officeRef. | Q-92 | L-399
+D-093 | newCustomer.phoneNumber is the new customer's callback number; contact.callbackNumber is removed. | Q-93 | L-404
+D-094 | office_contact resolves a caller-named office per Named Office before triage. | Q-94 | L-397
+D-095 | On reschedule_existing, the floor is the find_customer inherited baseline taken silently, with no gatekeeper or waterfall, raised to the bound appointment's taxProCertLevel. | Q-95 | L-395
+D-096 | On a reschedule whose bound appointment names no Tax Pro, rung 3 searches nearby offices for any qualified Tax Pro and rung 4 is skipped. | Round 8 list | L-396
+D-097 | An appointments_and_logistics question outside a task goes to faq_agent in every agent; Part 3 hands only questions about an existing appointment to appointment_scheduler. | Round 8 list | L-400
+D-098 | Both frozen outcome_unknown copies read "I'm sorry, I'm having a little trouble confirming that on my end. Let me get someone to finish this for you so nothing gets done twice." | Round 8 list | L-402
+D-099 | scheduler_never reads "When offering or explaining a method, use global_voice_lexicon.method_descriptions." | Round 8 list | L-403

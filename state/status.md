@@ -130,3 +130,11 @@ Constitution applied: yes (2026-09-28)
 - Lint: RESULT WARN, no FAIL.
 - Sweep clean: no (new Medium findings and questions). Clean-sweep counter: 0.
 - Round cap reached; rounds/FINAL.md written.
+
+## Round 8 answers (applied after the round cap)
+- 16 answers recorded as D-084 to D-099 (D-084 supersedes the D-050 "still asks" clause). 17 ledger rows decided: L-395 to L-404, L-418 to L-424.
+- Field removed under decision: contact.callbackNumber (D-093). No outcome, nextAction, or routingTarget added or removed.
+- Verification by the orchestrator: all pass, 0 reverted.
+- Size: 17,454 words (lint), 139,494 bytes. Round growth +0.92% (limit 1.0%). Total growth +3.24% (limit 5%).
+- Lint: RESULT WARN, no FAIL.
+- No Medium-or-higher item is open. Backlog (Low) remains.
