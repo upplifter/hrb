@@ -1,6 +1,6 @@
 # Status
 
-Round: 5
+Round: 6
 Clean-sweep counter: 0
 Constitution applied: yes (2026-09-28)
 
@@ -80,4 +80,19 @@ Constitution applied: yes (2026-09-28)
 - Carried Human items for round 6: L-074 to L-164 not yet asked, and L-192.
 - Size vs baseline: 16705 words (-0.89% by lint), 133920 bytes. Round growth -0.38%.
 - Lint: RESULT WARN, no FAIL.
+- Sweep clean: no (new Medium findings and questions). Clean-sweep counter: 0.
+
+## Round 5 answers (applied before round 6)
+- 11 answers recorded as D-050 to D-060; 16 items fixed (L-322, L-324, L-325, L-357 to L-368); L-323 decided with no edit (D-057).
+- New outcome added: `appointment_details_provided`. Deleted: nextAction `capture_intent`.
+- Verifier: 9 pass, 4 fix-needed, all fixed; 3 small propagation gaps fixed as L-382. Round 5 growth +0.99% (limit 1.0%).
+
+## Round 6
+- Findings: 6 lens files plus a re-check of 25 carried items. New ledger rows L-369 to L-382 (14): Medium 12 (3 Safe, 9 Human), Low 2.
+- Safe fixed: L-373, L-374, L-380, L-381 (12 trims), L-382, plus carried L-111 and L-192; L-078 found already fixed. Verifier: all pass, 1 fix-needed (L-374), fixed.
+- Oscillation guard: B-01 on §1.3 Leave-a-Message Ownership reclassified Human (L-376).
+- Backlog added: L-077, L-079, L-091, L-134, L-161 (re-checked as Low).
+- Questions asked: 12 (rounds/round-06/questions.md, Q-60 to Q-71), covering L-081, L-084, L-085, L-090, L-135, L-150, L-160, L-163, L-369 to L-372, L-375 to L-379.
+- Carried to round 7 (options drafted in rounds/round-06/findings-R.md): L-074, L-075, L-080, L-089, L-136, L-140, L-146, L-162, L-164.
+- Size: 16,870 words (lint), round growth -0.35%. Lint: RESULT WARN, no FAIL.
 - Sweep clean: no (new Medium findings and questions). Clean-sweep counter: 0.

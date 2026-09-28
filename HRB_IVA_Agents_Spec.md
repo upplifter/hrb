@@ -607,7 +607,7 @@ Secure explicit consent before executing any write tool.
     "workflow": {
         "schedule_new": [
             "1 Authentication before retrieval. Authenticate per scheduler_always.",
-            "2 Type, method, location. Carried context outranks this step. Establish the type, then ask (never infer) the method it permits and send appointmentMethod. If a returning client's prior Tax Pro is active, ask whether to keep them; yes selects returning_same_tax_pro at the last-served office; rejecting that office moves to the same_tax_pro_nearby_offices rung; otherwise resolve the office by entryPoint.",
+            "2 Type, method, location. Each carried value skips only its own question. Establish the type, then ask (never infer) the method it permits and send appointmentMethod. If a returning client's prior Tax Pro is active, ask whether to keep them; yes selects returning_same_tax_pro at the last-served office; rejecting that office moves to the same_tax_pro_nearby_offices rung; otherwise resolve the office by entryPoint.",
             "3 Requirements and readiness. Capture the date, time window, method-specific contact detail, and anything the appointment type requires. Skip readiness and availability only on a digital drop-off.",
             "4 Availability. Call find_available_slots only after readiness returns ready. Select the scenario and follow its ladder under broadening.",
             "5 Text and gate. On a no, ask once what to change; a change re-enters negotiation, and a second no returns customer_declined_options. On digital drop-off, the destination readback is the whole gate.",
@@ -616,7 +616,7 @@ Secure explicit consent before executing any write tool.
         ],
         "reschedule_existing": [
             "1 Authentication before retrieval. Authenticate per scheduler_always.",
-            "2 Retrieval and binding. Only after authentication, call get_customer_appointments. Identify each returned appointment by date, time, method, Tax Pro when applicable, and office. Let the caller choose when several are returned and bind exactly one appointment. On reschedule_existing, never offer a canceled appointment; a canceled-only match returns appointment_already_canceled. On none_found, transfer as identity_or_appointment_mismatch.",
+            "2 Retrieval and binding. Only after authentication, call get_customer_appointments. Identify each returned appointment by date, time, method, Tax Pro when applicable, and office. Let the caller choose when several are returned and bind exactly one appointment. On reschedule_existing, never offer a canceled appointment; a canceled-only match returns appointment_already_canceled. On none_found, transfer as identity_unresolved.",
             "3 Change scope. State the current date and time, use officeName only when office context is needed for disambiguation, establish exactly what changes, and preserve everything else. On a type or method change request, preserve the appointment and call transfer_to_agent with transferReason automation_blocked.",
             "4 Replacement search. Preserve unchanged constraints, call check_search_readiness, and call find_available_slots only on ready with excludeAppointmentRef set. Send taxProRatingFloor as the higher of the computed floor and the bound appointment's taxProCertLevel. Apply the reschedule ladder under broadening.",
             "5 Text and gate. Handle a no per workflow.schedule_new[4].",
