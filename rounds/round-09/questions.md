@@ -9,13 +9,13 @@ Options:
   B. Keep D-044 for hours and status only; the phone number stays limited to the dialed routedOfficeRef office (about +15 words).
   C. Leave both (dead rule).
 Footprint: A ≈ 2 edits, -45 words. B ≈ 2 edits, +15 words.
-Answer:
+Answer: A
 
 ## Guesses to check (applied, provisional)
 
 Least certain first:
 - **D-101 (L-431)** Callback handoff officeRef: the Tax Pro's `primaryOfficeId`, or `priorOfficeRef` for the prior Tax Pro. Alternative: `routedOfficeRef`, or no officeRef on a callback.
-  Answer:
+  Answer: 
 - **D-111 (L-443)** `taxProPreference` and `taxProRef` are sent whenever a Tax Pro is bound, with source mapped: caller_stated (caller asks for one), prior_tax_pro (keeps the prior), carried, existing_appointment. Alternative: drop `caller_stated`.
   Answer:
 - **D-100 (L-426)** On reschedule, emerald_advance, tax_notice_service, callback, and physical_drop_off keep their fixed floor; the raised baseline applies to the other types. Alternative: the raised baseline on every type except physical_drop_off.
