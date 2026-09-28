@@ -1,6 +1,6 @@
 # Status
 
-Round: 6
+Round: 7
 Clean-sweep counter: 0
 Constitution applied: yes (2026-09-28)
 
@@ -103,3 +103,15 @@ Constitution applied: yes (2026-09-28)
 - Offsetting Safe trims of about -115 words (closure.line_patterns handoff_unavailable, gate-correction item, restated outcome defaults, §1.3).
 - Verifier: 7 pass, 5 fix-needed, all fixed; 0 reverted. New Human items L-383, L-384, L-385 (Medium, open).
 - Size: 17,110 words (lint), 136,995 bytes. Round 6 growth +0.91% (limit 1.0%). Lint: RESULT WARN, no FAIL.
+
+## Round 7
+- Findings: 6 lens files, 47 raw findings merged into ledger rows L-386 to L-411 (26). High 1, Medium 14 (3 Safe, 11 Human), Low 11.
+- Safe fixed: 7 rows (L-386 to L-392; L-392 holds 9 trims). Verifier: 16 of 17 checks pass, 1 fix-needed (L-387), fixed on follow-up, 0 reverted.
+- Oscillation guard: 5 items on anchors edited in 3 earlier rounds went to the backlog (L-405 to L-408, L-410). L-386 and L-389 applied as propagation of D-061 and D-071.
+- Questions asked: 12 (rounds/round-07/questions.md, Q-72 to Q-83), covering L-074, L-075, L-080, L-089, L-136, L-140, L-146, L-162, L-164, L-383 to L-385, L-393, L-394.
+- Backlog added: L-405 to L-411.
+- Carried Human items for round 8: L-395 to L-404 (options in findings-A to findings-E).
+- Size: 17,074 words (lint), 136,712 bytes. Round growth -0.21%. Total growth +1.18% (limit 5%).
+- Lint: RESULT WARN, no FAIL.
+- Sweep clean: no (new High and Medium findings and questions). Clean-sweep counter: 0.
+- Note: fixes applied by the orchestrator from fully specified replacement text; reviewers and verifier returned findings in their replies.

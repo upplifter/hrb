@@ -36,3 +36,10 @@ Low findings and deferred items. They do not block the exit.
 - L-134 | §5.2 find_offices_near DNIS resolution | Two owners give the same answer; field removal is Human, Low | Low (round 6 re-check).
 - L-161 | closure.line_patterns keys | closing_style governs; fold into L-034 restructure | Low (round 6 re-check).
 - L-381 note | Ladders table, Returning, Same Tax Pro cell still 52 words | Lint WARN only | Low.
+- L-405 | §3 and §4 interruptions.intent_change | routingTarget for Tax Pro and office-staff requests | Low (round 7, oscillation guard).
+- L-406 | §1.3 Leave-a-Message Ownership; global_always leave-message item | Add closed_for_season to the trigger list | Low (round 7, oscillation guard).
+- L-407 | §4 Mini-Dialogues 4A, 4E | Add a find_customer System turn before disclosure | Low (round 7, oscillation guard).
+- L-408 | §3 Office Contact Triage CLOSED and OPEN; office_always | Name office_contact_triage_complete on CLOSED; drop "stop speaking" | Low (round 7, oscillation guard; with L-223).
+- L-409 | scheduler_always textConfirmation | channel email never captured | Low (round 7, Human).
+- L-410 | Round 7 F-01, F-02, F-07, F-14, F-15, F-17, F-20 (Conventions) | Editorial trims on guarded anchors, about -57 words | Low (round 7, oscillation guard).
+- L-411 | Round 7 F-04, F-05, F-11 | Trims of round 6 decision text, about -28 words | Low (round 7, held).
