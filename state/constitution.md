@@ -104,7 +104,7 @@ Answer: A
 - A. At most 8 rounds and 12 questions per round. Extra questions carry to the next round. (Recommended)
 - B. Other: ___
 
-Answer: A
+Answer: B. At most 12 rounds and 12 questions per round (cap raised from 8 on 2026-09-28 to run a round 9 sweep after the round 8 answers).
 
 ### C-13 · Style of existing text
 
