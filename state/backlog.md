@@ -30,3 +30,9 @@ Low findings and deferred items. They do not block the exit.
 - L-354 | §3 State 2 workflow.office_contact_flow[0] | Describes the Leave a Message flow's internals; oscillation guard. | Human, Low.
 - L-355 | agent_specific_outcomes.appointment_already_canceled; Part 5 Conventions summary bullet | canceledSummary means a write result and a retrieved record; oscillation guard. | Human, Low.
 - L-356 | Part 5 Conventions first bullet | Dead envelope synonyms; oscillation guard (L-321). | Human, Low.
+- L-077 | §1.5 global_never (post-handback tool calls) | Existing single-payload, one-transaction, and post-commit rules cover the risky calls | Low (round 6 re-check).
+- L-079 | §3 closed_for_season; §2 State 3 Off-Season Closure | Two agents use their own tools for different purposes; possible backend mismatch only | Low (round 6 re-check).
+- L-091 | Scheduler objective; regional virtual rung | Slot and booking response carry the office | Low (round 6 re-check).
+- L-134 | §5.2 find_offices_near DNIS resolution | Two owners give the same answer; field removal is Human, Low | Low (round 6 re-check).
+- L-161 | closure.line_patterns keys | closing_style governs; fold into L-034 restructure | Low (round 6 re-check).
+- L-381 note | Ladders table, Returning, Same Tax Pro cell still 52 words | Lint WARN only | Low.
