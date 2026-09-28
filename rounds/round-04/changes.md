@@ -38,3 +38,6 @@ L-287 | §2 State 5 closure.re_entry | Cut one-transaction restatement (objectiv
 L-245 | §3 Office Contact Triage > If OPEN; §3 State 2 office_always OPEN item | Now return office_open_unanswered with nextAction leave_message_offer (D-031) | +3
 L-249 | §1.5 global_outcomes.validation_failed | Excludes change_not_allowed and not_cancelable as well as rejected (D-015) | +3
 L-250 | §2 State 3 Informational Interruptions > Personal Questions | Added "and resume" to match agent_specific_tools.search_knowledge_base | +2
+L-254 (follow-up) | closure.line_patterns.handoff_unavailable | Failed-call clause now precedes and excludes the agent_unavailable branches | +3
+L-266 (follow-up) | §2 State 3 Search Broadening Ladder > Principles | Restored "The tool ranks named Tax Pros ahead of CDAS" in prose | +8
+L-274 (follow-up) | scheduler_always office identity item | "Until the post-commit readback" became "Outside the post-commit readback and terminal outcome" | +3

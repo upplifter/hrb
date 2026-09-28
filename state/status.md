@@ -51,3 +51,15 @@ Constitution applied: yes (2026-09-28)
 - Verifier: 33 pass, 4 fix-needed (L-174, L-177, L-182, L-202); all 4 fixed on follow-up, 0 reverted.
 - New items from verification: L-238 to L-244 (Medium, Human, open); L-245, L-247, L-249, L-250 (Low, Safe, open); L-246, L-248, L-251 to backlog.
 - Size: 16690 words, 133148 bytes. Round growth +0.97% (limit 1.0%). Lint: RESULT WARN, no FAIL.
+
+## Round 4
+- Findings: 6 lens files, 76 raw findings merged into ledger rows L-252 to L-321 (70). High 3, Medium 33, Low 34.
+- Safe fixed: 40 (L-245, L-247, L-249, L-250, L-252 to L-287). Verifier: 38 pass, 3 fix-needed (L-254, L-266, L-274), all fixed on follow-up, 0 reverted.
+- Questions asked: 12 (rounds/round-04/questions.md, Q-37 to Q-48), covering 39 ledger items, including all three open Highs (L-288, L-289, L-290) and L-238 to L-244.
+- Oscillation guard: F-02 (Part 5 Conventions, edited rounds 1-3) reclassified Human, to backlog as L-321.
+- Backlog added: L-318 to L-321.
+- Carried Human items for round 5: L-074 to L-164 not yet asked, and L-192.
+- Size vs baseline: 16395 words (-2.71% by lint), 131455 bytes. Round growth -1.27%.
+- Lint: RESULT WARN, no FAIL.
+- Sweep clean: no (new High and Medium findings and questions). Clean-sweep counter: 0.
+- Note: reviewers again could not write findings files; the orchestrator saved them from the replies.

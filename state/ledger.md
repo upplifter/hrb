@@ -248,49 +248,49 @@ Status values: open, fixed, asked, decided, deferred, rejected, backlog, reverte
 | L-242 | V | §1.4 system_failure row; global_always transfer-results item | Medium | Human | asked | 3 | Failed transfer call speaks "Let me get you to a person", then closes with no person. |
 | L-243 | V | §3 Cross-Office Restriction; office_never phone item; office_always CLOSED item | Medium | Human | asked | 3 | "Routed office" undefined with null routedOfficeRef; CLOSED branch after ZIP capture speaks a number office_never forbids. |
 | L-244 | V | §4 Generic Request; tax_pro_always unavailable item; routed_to_scheduler | Medium | Human | asked | 3 | Generic caller with no prior Tax Pro hears "they are unavailable"; routed_to_scheduler needs an officeRef the path never resolves. |
-| L-245 | V | §3 If OPEN; office_always OPEN item | Low | Safe | open | 3 | OPEN branch does not name office_open_unanswered as its outcome (D-031). |
+| L-245 | V | §3 If OPEN; office_always OPEN item | Low | Safe | fixed | 3 | OPEN branch does not name office_open_unanswered as its outcome (D-031). |
 | L-246 | V | §5.1 search_knowledge_base KB results | Low | Human | asked | 3 | requires_tax_pro outside the Scheduler returns no_approved_answer (D-025) vs speak_to_tax_pro handback (D-034). |
-| L-247 | V | workflow.schedule_new[1]; §2 State 3 Office Resolution > Rollover; scheduler_always rollover item | Low | Safe | open | 3 | Steps read unconditionally; add pointer to carried-context precedence (D-027). |
+| L-247 | V | workflow.schedule_new[1]; §2 State 3 Office Resolution > Rollover; scheduler_always rollover item | Low | Safe | fixed | 3 | Steps read unconditionally; add pointer to carried-context precedence (D-027). |
 | L-248 | V | agent_specific_outcomes.customer_declined_options | Low | Human | backlog | 3 | "requesting a person" ambiguous after D-034 split live-agent and Tax Pro requests. |
-| L-249 | V | global_outcomes.validation_failed | Low | Safe | open | 3 | "a result other than rejected" overlaps change_not_allowed and not_cancelable, mapped to automation_blocked (D-015). |
-| L-250 | V | §2 State 3 Informational Interruptions > Personal Questions | Low | Safe | open | 3 | Bullet omits "resume", which its JSON mirror carries. |
+| L-249 | V | global_outcomes.validation_failed | Low | Safe | fixed | 3 | "a result other than rejected" overlaps change_not_allowed and not_cancelable, mapped to automation_blocked (D-015). |
+| L-250 | V | §2 State 3 Informational Interruptions > Personal Questions | Low | Safe | fixed | 3 | Bullet omits "resume", which its JSON mirror carries. |
 | L-251 | V | §1.5 terminal_payload_contract | Low | Human | backlog | 3 | 214 words, over the 60-word JSON item limit; fold into L-034. |
-| L-252 | A,B,E | §2 State 2 Appointment Type Rules > Tax Pro Requests; interruptions.intent_change | Medium | Safe | open | 4 | Prose "A request for a specific or own Tax Pro" drops "to speak to" (D-034, JSON mirror), which would hand back returning_same_tax_pro bookings. |
-| L-253 | E | §2 State 5 workflow.cancel_existing[1]; appointment_already_canceled | Medium | Safe | open | 4 | cancel_existing never checks status canceled before the gate (D-021, D-028). |
-| L-254 | B | §2 State 5 closure.line_patterns.handoff_unavailable | Medium | Safe | open | 4 | Else-branch speaks supportHoursSpoken on a failed transfer call, against global_always (D-026). |
-| L-255 | A | §4 State 2 objective | Low | Safe | open | 4 | Objective omits routed_to_scheduler for another Tax Pro and tax_pro_options_declined. |
-| L-256 | C | §3 State 1 Intent Scope & Disambiguation > unclear_intent | Low | Safe | open | 4 | Label "unclear_intent" styled as an enum; the outcome is intent_unclear. |
-| L-257 | C | §4 Fulfillment Priority step 4; workflow.speak_to_tp_generic[4], speak_to_tp_by_name[5] | Low | Safe | open | 4 | Return lists mix nextAction values with a finalOutcome. |
-| L-258 | E | §2 State 5 agent_specific_outcomes.no_acceptable_availability | Low | Safe | open | 4 | Definition omits first-lookup none_nearby (D-015, D-016). |
-| L-259 | E | §5.2 get_customer_appointments Outcome Results (too_many) | Low | Safe | open | 4 | too_many row not updated for D-028 active-or-canceled count. |
-| L-260 | E | §1.5 global_never web-deflection item | Low | Safe | open | 4 | JSON narrower than §1.2: omits website and app-name ban. |
-| L-261 | E | §2 State 5 agent_specific_tools.check_search_readiness | Low | Safe | open | 4 | No conflict branch mirroring the §1.4 conflict-from-readiness row. |
-| L-262 | E | §1.5 context_envelope.appointmentType, taxProRef, officeRef | Low | Safe | open | 4 | Envelope strings omit D-027 precedence over entryPoint and routedOfficeRef. |
-| L-263 | B | §4 No Matches / Inactive; tax_pro_always unavailable item | Low | Safe | open | 4 | Rule says to offer "the Appointment Scheduler", internal architecture §1.2 bans. |
-| L-264 | B | §4 Mini-Dialogue 4D | Low | Safe | open | 4 | Handoff line spoken with no agent_available result, under a "System (Agent)" label (C-9). |
-| L-265 | F | §2 State 5 agent_specific_tools (find_customer, find_offices_near, find_available_slots, book_appointment); workflow.schedule_new[1],[3], reschedule_existing[3] | Low | Safe | open | 4 | F-01: Pointer-only "Apply/Follow the ... rules" sentences (-65w). |
-| L-266 | F | §2 State 5 broadening.principles[6]; §2 State 3 Search Broadening Ladder > Principles | Low | Safe | open | 4 | F-03: Slot-order/CDAS rule restated; tool-ranking sentence (-29w). |
-| L-267 | F | §2 State 5 workflow.cancel_existing[1] | Low | Safe | open | 4 | F-04: Retrieval step duplicates reschedule_existing[1] (-27w). |
-| L-268 | F | §4 State 2 workflow.leave_message[0],[1] | Low | Safe | open | 4 | F-05: Context-pass split across two steps (-20w). |
-| L-269 | F | §2 State 5 scheduler_always tax_notice_service capture item | Low | Safe | open | 4 | F-06: Five notice values listed twice (-20w). |
-| L-270 | F | §2 State 5 scheduler_always three-sentence readback item; §2 State 4 Chunked Readback | Low | Safe | open | 4 | F-07: Sentence positions spelled out (-20w). |
-| L-271 | F | §2 State 5 workflow.schedule_new[5] | Low | Safe | open | 4 | F-08: Booking step restates payload rules (-19w). |
-| L-272 | F | §1.5 global_always no-input item | Low | Safe | open | 4 | F-09: Restates consecutive_silence outcome (-15w). |
-| L-273 | F | §4 Mini-Dialogue 4A last System turn | Low | Safe | open | 4 | F-11: System line explains flow internals (-14w). |
-| L-274 | F | §2 State 5 scheduler_always office identity item | Low | Safe | open | 4 | F-12: Lists every pre-commit phase (-13w). |
-| L-275 | F | §2 State 5 scheduler_always reschedule changing item | Low | Safe | open | 4 | F-13: Repeats "if ... differs" four times (-13w). |
-| L-276 | F | §5.2 find_customer intro; Note | Low | Safe | open | 4 | F-14: Read-only and status enum stated twice (-13w). |
-| L-277 | F | §2 State 5 closure.continuation_context | Low | Safe | open | 4 | F-15: Restates priorTransaction rules (-12w). |
-| L-278 | F | §5.3 check_office_open_status intro | Low | Safe | open | 4 | F-16: Lists tool inputs (-12w). |
-| L-279 | F | §1.5 global_never message item | Low | Safe | open | 4 | F-17: Ownership explanation sentence (-11w). |
-| L-280 | F | §1.5 Universal Base JSON Prompt intro | Low | Safe | open | 4 | F-18: Lists the block's contents (-11w). |
-| L-281 | F | §2 State 2 DDO Rules > Rescheduling; Complexity Matching > Guardrails | Low | Safe | open | 4 | F-19: Duplicate DDO clause and rationale clause (-11w). |
-| L-282 | F | §2 State 5 scheduler_never profile item | Low | Safe | open | 4 | F-20: Lists pre-commit phases (-10w). |
-| L-283 | F | §5.2 book_appointment intro | Low | Safe | open | 4 | F-21: "point of no return" softener (-10w). |
-| L-284 | F | §2 State 3 Search Broadening Ladder intro | Low | Safe | open | 4 | F-22: Restates one-constraint principle (-9w). |
-| L-285 | F | §2 State 5 workflow.reschedule_existing[2] | Low | Safe | open | 4 | F-23: Type/method bar stated twice (-9w). |
-| L-286 | F | §2 State 5 scheduler_always isCDAS item | Low | Safe | open | 4 | F-24: Two conditionals for one definition (-8w). |
-| L-287 | F | §2 State 5 closure.re_entry | Low | Safe | open | 4 | F-25: Restates the one-transaction limit (-7w). |
+| L-252 | A,B,E | §2 State 2 Appointment Type Rules > Tax Pro Requests; interruptions.intent_change | Medium | Safe | fixed | 4 | Prose "A request for a specific or own Tax Pro" drops "to speak to" (D-034, JSON mirror), which would hand back returning_same_tax_pro bookings. |
+| L-253 | E | §2 State 5 workflow.cancel_existing[1]; appointment_already_canceled | Medium | Safe | fixed | 4 | cancel_existing never checks status canceled before the gate (D-021, D-028). |
+| L-254 | B | §2 State 5 closure.line_patterns.handoff_unavailable | Medium | Safe | fixed | 4 | Else-branch speaks supportHoursSpoken on a failed transfer call, against global_always (D-026). |
+| L-255 | A | §4 State 2 objective | Low | Safe | fixed | 4 | Objective omits routed_to_scheduler for another Tax Pro and tax_pro_options_declined. |
+| L-256 | C | §3 State 1 Intent Scope & Disambiguation > unclear_intent | Low | Safe | fixed | 4 | Label "unclear_intent" styled as an enum; the outcome is intent_unclear. |
+| L-257 | C | §4 Fulfillment Priority step 4; workflow.speak_to_tp_generic[4], speak_to_tp_by_name[5] | Low | Safe | fixed | 4 | Return lists mix nextAction values with a finalOutcome. |
+| L-258 | E | §2 State 5 agent_specific_outcomes.no_acceptable_availability | Low | Safe | fixed | 4 | Definition omits first-lookup none_nearby (D-015, D-016). |
+| L-259 | E | §5.2 get_customer_appointments Outcome Results (too_many) | Low | Safe | fixed | 4 | too_many row not updated for D-028 active-or-canceled count. |
+| L-260 | E | §1.5 global_never web-deflection item | Low | Safe | fixed | 4 | JSON narrower than §1.2: omits website and app-name ban. |
+| L-261 | E | §2 State 5 agent_specific_tools.check_search_readiness | Low | Safe | fixed | 4 | No conflict branch mirroring the §1.4 conflict-from-readiness row. |
+| L-262 | E | §1.5 context_envelope.appointmentType, taxProRef, officeRef | Low | Safe | fixed | 4 | Envelope strings omit D-027 precedence over entryPoint and routedOfficeRef. |
+| L-263 | B | §4 No Matches / Inactive; tax_pro_always unavailable item | Low | Safe | fixed | 4 | Rule says to offer "the Appointment Scheduler", internal architecture §1.2 bans. |
+| L-264 | B | §4 Mini-Dialogue 4D | Low | Safe | fixed | 4 | Handoff line spoken with no agent_available result, under a "System (Agent)" label (C-9). |
+| L-265 | F | §2 State 5 agent_specific_tools (find_customer, find_offices_near, find_available_slots, book_appointment); workflow.schedule_new[1],[3], reschedule_existing[3] | Low | Safe | fixed | 4 | F-01: Pointer-only "Apply/Follow the ... rules" sentences (-65w). |
+| L-266 | F | §2 State 5 broadening.principles[6]; §2 State 3 Search Broadening Ladder > Principles | Low | Safe | fixed | 4 | F-03: Slot-order/CDAS rule restated; tool-ranking sentence (-29w). |
+| L-267 | F | §2 State 5 workflow.cancel_existing[1] | Low | Safe | fixed | 4 | F-04: Retrieval step duplicates reschedule_existing[1] (-27w). |
+| L-268 | F | §4 State 2 workflow.leave_message[0],[1] | Low | Safe | fixed | 4 | F-05: Context-pass split across two steps (-20w). |
+| L-269 | F | §2 State 5 scheduler_always tax_notice_service capture item | Low | Safe | fixed | 4 | F-06: Five notice values listed twice (-20w). |
+| L-270 | F | §2 State 5 scheduler_always three-sentence readback item; §2 State 4 Chunked Readback | Low | Safe | fixed | 4 | F-07: Sentence positions spelled out (-20w). |
+| L-271 | F | §2 State 5 workflow.schedule_new[5] | Low | Safe | fixed | 4 | F-08: Booking step restates payload rules (-19w). |
+| L-272 | F | §1.5 global_always no-input item | Low | Safe | fixed | 4 | F-09: Restates consecutive_silence outcome (-15w). |
+| L-273 | F | §4 Mini-Dialogue 4A last System turn | Low | Safe | fixed | 4 | F-11: System line explains flow internals (-14w). |
+| L-274 | F | §2 State 5 scheduler_always office identity item | Low | Safe | fixed | 4 | F-12: Lists every pre-commit phase (-13w). |
+| L-275 | F | §2 State 5 scheduler_always reschedule changing item | Low | Safe | fixed | 4 | F-13: Repeats "if ... differs" four times (-13w). |
+| L-276 | F | §5.2 find_customer intro; Note | Low | Safe | fixed | 4 | F-14: Read-only and status enum stated twice (-13w). |
+| L-277 | F | §2 State 5 closure.continuation_context | Low | Safe | fixed | 4 | F-15: Restates priorTransaction rules (-12w). |
+| L-278 | F | §5.3 check_office_open_status intro | Low | Safe | fixed | 4 | F-16: Lists tool inputs (-12w). |
+| L-279 | F | §1.5 global_never message item | Low | Safe | fixed | 4 | F-17: Ownership explanation sentence (-11w). |
+| L-280 | F | §1.5 Universal Base JSON Prompt intro | Low | Safe | fixed | 4 | F-18: Lists the block's contents (-11w). |
+| L-281 | F | §2 State 2 DDO Rules > Rescheduling; Complexity Matching > Guardrails | Low | Safe | fixed | 4 | F-19: Duplicate DDO clause and rationale clause (-11w). |
+| L-282 | F | §2 State 5 scheduler_never profile item | Low | Safe | fixed | 4 | F-20: Lists pre-commit phases (-10w). |
+| L-283 | F | §5.2 book_appointment intro | Low | Safe | fixed | 4 | F-21: "point of no return" softener (-10w). |
+| L-284 | F | §2 State 3 Search Broadening Ladder intro | Low | Safe | fixed | 4 | F-22: Restates one-constraint principle (-9w). |
+| L-285 | F | §2 State 5 workflow.reschedule_existing[2] | Low | Safe | fixed | 4 | F-23: Type/method bar stated twice (-9w). |
+| L-286 | F | §2 State 5 scheduler_always isCDAS item | Low | Safe | fixed | 4 | F-24: Two conditionals for one definition (-8w). |
+| L-287 | F | §2 State 5 closure.re_entry | Low | Safe | fixed | 4 | F-25: Restates the one-transaction limit (-7w). |
 | L-288 | C,D | §2 State 5 closure.re_entry; scheduler_always idempotency item; §5.2 send_secure_link | High | Human | asked | 4 | Fresh key namespace on re-entry cannot be built; a DDO change reuses interactionId-ddo-1 and is deduplicated. |
 | L-289 | A | §1.3 Leave-a-Message Ownership; §1.4 agent_unavailable message-available row; closure.line_patterns.handoff_unavailable | High | Human | asked | 4 | Spec gives the message offer and support hours to the Leave a Message flow, which has neither; Head of Call has no leave_message_offer node. |
 | L-290 | A | §4 No Matches / Inactive; §2 State 2 Tax Pro Requests; interruptions.intent_change | High | Human | asked | 4 | A callback request with no reachable Tax Pro bounces between Part 4 and the Scheduler with no bound. |
