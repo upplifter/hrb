@@ -63,3 +63,10 @@ Constitution applied: yes (2026-09-28)
 - Lint: RESULT WARN, no FAIL.
 - Sweep clean: no (new High and Medium findings and questions). Clean-sweep counter: 0.
 - Note: reviewers again could not write findings files; the orchestrator saved them from the replies.
+
+## Round 4 answers (applied before round 5)
+- 12 answers recorded as D-038 to D-049; 39 items fixed (L-238 to L-244, L-246, L-288 to L-317 as listed, L-320).
+- Deleted: outcome `intent_unclear`, intent value `informational`.
+- Verifier: 32 pass, 7 fix-needed (L-316, L-243, L-305, L-303, L-317, L-306, one brevity trim); all fixed on follow-up, 0 reverted.
+- New items from verification: L-322, L-323, L-324 (Medium, Human, open); L-325 (Low, Human, open).
+- Size: 16791 words (lint), 134433 bytes. Round growth +0.97% (limit 1.0%). Lint: RESULT WARN, no FAIL.

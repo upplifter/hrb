@@ -48,3 +48,16 @@ L-314 | §2 State 3 Appointment Details (new bullet); objective; agent_specific_
 
 - After D-042 deleted `intent_unclear`, no outcome uses nextAction capture_intent. Removing it needs a decision (C-7).
 - D-049's appointment-details read path returns nextAction offer_additional_help but no finalOutcome exists for it. Adding one needs a decision (C-7).
+
+## Follow-up fixes from verify.md
+
+L-316 (follow-up) | §1.4 handoff_invalid row | "call no tools" became "never call `transfer_to_agent`", the D-043 wording | +1
+L-243 (follow-up) | office_always[1], [2] | Routed-office rule moved to item [1] and covers ZIP- and name-resolved offices | +8
+L-305 (follow-up) | §3 Office Contact Triage first bullet | seasonalStatus check runs on every office_contact path, not only with a null routedOfficeRef | +2
+L-303 (follow-up) | §1.2 No-Input Rule; global_always no-input item | Part 1 names the office_info first-silence exception (C-1); No-Input bullet trimmed | -2
+L-317 (follow-up) | Scheduler agent_specific_tools.search_knowledge_base; scheduler_never[2] | Tool entry covers personal questions asked without a KB call; pointer names the full key path | +10
+L-306 (follow-up) | tax_pro_always[2] | JSON mirror for the single-match rule; "(terminal intent speak_to_tax_pro)" cut | +10
+Brevity trims (follow-up) | §5.1 transfer_to_agent usage sentence | Points to the agent's own transfer_to_agent entry as well as global_always | +7
+Offsetting trims | §4 State 1 intro; §4 Fulfillment: Leave a Message; §4 Fulfillment: CDAS Callback; §5.2 find_offices_near Note | Intro cut to two sentences; handoff bullets shortened; CDAS handoff returns routed_to_scheduler by name | -45
+
+Lint after follow-ups: RESULT WARN, no FAIL; round growth +0.97%; JSON valid.

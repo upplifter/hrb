@@ -325,3 +325,7 @@ Status values: open, fixed, asked, decided, deferred, rejected, backlog, reverte
 | L-319 | B | §2 Mini-Dialogue 2A, 2B last Agent turns | Low | Human | backlog | 4 | Latency bridges outside preamble_phrases (frozen). |
 | L-320 | F | §1.3 Leave-a-Message Ownership fourth bullet | Low | Safe | decided | 4 | F-10: flow-internals list; held for L-289 ownership question. |
 | L-321 | F | Part 5 Conventions (Request, Response, Read result first) | Low | Human | backlog | 4 | F-02: trim -39w; anchor edited in rounds 1-3, oscillation guard. |
+| L-322 | V | §3 Office Details Logic > No Name Match; office_always[2] | Medium | Human | open | 4 | Name no-match transfers as system_failure, but D-044 limits lookup failures to tool errors. |
+| L-323 | V | §1.5 global_always followUpTopics item (Part 4) | Medium | Human | open | 4 | In Part 4, requires_tax_pro returns no_approved_answer and ends a caller who wants a Tax Pro. |
+| L-324 | V | §2 State 3 Appointment Details; agent_specific_tools.get_customer_appointments | Medium | Human | open | 4 | Appointment-details read path has no finalOutcome; the terminal contract cannot validate. |
+| L-325 | V | §1.5 terminal_payload_contract nextAction capture_intent | Low | Human | open | 4 | No outcome uses capture_intent after intent_unclear was deleted (D-042). |
