@@ -428,3 +428,27 @@ Status values: open, fixed, asked, decided, deferred, rejected, backlog, reverte
 | L-422 | D | scheduler_always efile_rejection_retail item | Medium | Human | decided | 8 | efile entry proposes an inactive prior Tax Pro. |
 | L-423 | D,F | agent_specific_tools.check_search_readiness; §2 State 3 Readiness Cap; §5.2 conflict | Medium | Human | decided | 8 | A conflict that is neither a past date nor a closed type window has no first response. |
 | L-424 | D | invalidation.partial_acceptance; ladder_state; scenario_selection | Medium | Human | decided | 8 | Widening after D-074 names no scenario or rung. |
+| L-425 | B,C,E,F | §2 Complexity Matching > Reschedule | Medium | Safe | fixed | 9 | Prose omitted the D-095 raise to the bound taxProCertLevel. |
+| L-426 | B,C,D,E | workflow.reschedule_existing[3]; §2 Reschedule; scheduler_always type floors | Medium | Human | decided | 9 | D-095 floor collides with the fixed floors of emerald_advance, tax_notice_service, callback, physical_drop_off. |
+| L-427 | B,C | workflow.schedule_new[1] | Medium | Safe | fixed | 9 | Keep-prior-Tax-Pro question had no D-084 exception. |
+| L-428 | B,D,E | §1.5 terminal_payload_contract officeRef clause | Medium | Safe | fixed | 9 | "either handoff" left officeRef off routed_to_scheduler for another Tax Pro. |
+| L-429 | E,F | §3 office_never[0] | Medium | Safe | fixed | 9 | Barred every appointment question after D-097. |
+| L-430 | E,F | §4 Out-of-Scope (FAQ Agent); §2 Informational Interruptions | Low | Safe | fixed | 9 | faq_agent list missed out-of-task appointment-logistics; three spellings. |
+| L-431 | A,C | §4 CDAS Callback Handoff; tax_pro_always callback item | Medium | Human | decided | 9 | Source of taxProRef and officeRef on a callback handoff undefined. |
+| L-432 | A | invalidation.partial_acceptance on callback | Medium | Human | decided | 9 | Rejecting the carried Tax Pro on a callback restarts a ladder with no Tax Pro. |
+| L-433 | A | global_always search_knowledge_base item | Medium | Human | decided | 9 | "mid-task" undefined; logistics owned by KB and faq_agent. |
+| L-434 | D | workflow.schedule_new[1]; scenario_selection items 2-8 | Medium | Human | decided | 9 | Keep-prior answer discarded when items 2-6 match first. |
+| L-435 | D | terminal_payload_contract; transfer_unavailable | Medium | Human | decided | 9 | Post-commit transfer exits report transactionOccurred false. |
+| L-436 | D | Tax Pro Trade-off; returning_same_tax_pro rung 5 | Medium | Human | decided | 9 | Rung 5 question after a peak "stay" undefined. |
+| L-437 | D | scheduler_always phone_callback item | Medium | Human | decided | 9 | Reason capture timing on an accepted phone_callback rung. |
+| L-438 | D | §3 Cross-Office Restriction; office_never phone item | Medium | Human | asked | 9 | Rule cannot fire after D-044 and D-094; unchanged pending answer (Q-96). |
+| L-439 | E | §2 State 3 Tax Pro Trade-off (prose) | Medium | Safe | fixed | 9 | Prose lacked the D-074 and D-090 rejected-Tax-Pro rule. |
+| L-440 | E,F | global_always empathy item | Medium | Human | decided | 9 | "Promises no person" admits path-bound lines. |
+| L-441 | E | §2 Tax Pro Requests; interruptions.intent_change | Medium | Human | decided | 9 | "to speak to" lost; a keep-prior answer reads as a Tax Pro request. |
+| L-442 | C | global_outcomes.transfer_unavailable | Medium | Human | decided | 9 | leave_message_offer not tied to leaveMessageAvailable. |
+| L-443 | C | §5.2 taxProPreference; scheduler_always | Medium | Human | decided | 9 | No rule sends taxProPreference or taxProRef to the search tools. |
+| L-444 | C | §5.2 check_search_readiness issue | Medium | Human | decided | 9 | Conflict branches lack a discriminator; no change. |
+| L-445 | C | §1.4 intro; global_always transfer results | Medium | Human | decided | 9 | Transfer paths with no row have no agent_available line. |
+| L-446 | F | §2 write-tool entries | Low | Human | backlog | 9 | Repeated explicit-yes; consent echo kept. |
+| L-447 | F | §1.5 persona_translation; §5.2 Callbacks, none_nearby; §2 State 5 transfer_to_agent; §2 Principles | Low | Safe | fixed | 9 | Five editorial trims (F-06, F-07, F-09, F-11, F-12). |
+| L-448 | F | §1.5 global_outcomes.configuration_missing; agent_specific_tools.find_available_slots | Low | Safe | fixed | 9 | Trims of backlog L-346 and L-347 to fit the round budget. |

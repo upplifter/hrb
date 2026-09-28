@@ -102,3 +102,17 @@ D-096 | On a reschedule whose bound appointment names no Tax Pro, rung 3 searche
 D-097 | An appointments_and_logistics question outside a task goes to faq_agent in every agent; Part 3 hands only questions about an existing appointment to appointment_scheduler. | Round 8 list | L-400
 D-098 | Both frozen outcome_unknown copies read "I'm sorry, I'm having a little trouble confirming that on my end. Let me get someone to finish this for you so nothing gets done twice." | Round 8 list | L-402
 D-099 | scheduler_never reads "When offering or explaining a method, use global_voice_lexicon.method_descriptions." | Round 8 list | L-403
+D-100 | On reschedule_existing, emerald_advance, tax_notice_service, callback, and physical_drop_off keep their type floor (1 or null); the baseline raised to taxProCertLevel applies to the other types. (Round 9 guess.) | Round 9 guess | L-425, L-426
+D-101 | On a Part 4 callback handoff, officeRef is the matched Tax Pro's primaryOfficeId, or priorOfficeRef for the prior Tax Pro. (Round 9 guess, flagged.) | Round 9 guess | L-431
+D-102 | Rejecting the carried Tax Pro on a callback hands back intent_changed with routingTarget speak_to_tax_pro. (Round 9 guess.) | Round 9 guess | L-432
+D-103 | A knowledge-base question is mid-task when it interrupts an open booking, reschedule, cancellation, office answer, or Tax Pro request. (Round 9 guess.) | Round 9 guess | L-433
+D-104 | The keep-prior-Tax-Pro question is asked only on tax_prep. (Round 9 guess.) | Round 9 guess | L-434
+D-105 | After a commit, every outcome carries transactionOccurred true and the committed reference. (Round 9 guess.) | Round 9 guess | L-435
+D-106 | A "stay" at the peak trade-off also answers the rung 5 trade-off: rung 5 is exhausted. (Round 9 guess.) | Round 9 guess | L-436
+D-107 | The phone_callback reason is captured before the gate, including on an accepted phone_callback rung. (Round 9 guess.) | Round 9 guess | L-437
+D-108 | A free acknowledgment uses only one of the first three global_voice_lexicon.empathy lines. Refines D-087. (Round 9 guess.) | Round 9 guess | L-440
+D-109 | Tax Pro Requests covers a request "to speak to" a specific or own Tax Pro; a keep-prior answer is not one. (Round 9 guess.) | Round 9 guess | L-441
+D-110 | transfer_unavailable returns leave_message_offer only when leaveMessageAvailable is true, else close. (Round 9 guess.) | Round 9 guess | L-442
+D-111 | Whenever a Tax Pro is bound, the Scheduler sends taxProPreference (source caller_stated, prior_tax_pro, carried, or existing_appointment) and taxProRef to the search tools. D-079 values unchanged. (Round 9 guess, flagged.) | Round 9 guess | L-443
+D-112 | No change to check_search_readiness issue: a past date is judged from currentDateTime, and a closed window by the type row. (Round 9 guess.) | Round 9 guess | L-444
+D-113 | A transfer path with no §1.4 row speaks the agent_available line. (Round 9 guess.) | Round 9 guess | L-445
