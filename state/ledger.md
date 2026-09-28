@@ -325,10 +325,10 @@ Status values: open, fixed, asked, decided, deferred, rejected, backlog, reverte
 | L-319 | B | §2 Mini-Dialogue 2A, 2B last Agent turns | Low | Human | backlog | 4 | Latency bridges outside preamble_phrases (frozen). |
 | L-320 | F | §1.3 Leave-a-Message Ownership fourth bullet | Low | Safe | decided | 4 | F-10: flow-internals list; held for L-289 ownership question. |
 | L-321 | F | Part 5 Conventions (Request, Response, Read result first) | Low | Human | backlog | 4 | F-02: trim -39w; anchor edited in rounds 1-3, oscillation guard. |
-| L-322 | V | §3 Office Details Logic > No Name Match; office_always[2] | Medium | Human | asked | 4 | Name no-match transfers as system_failure, but D-044 limits lookup failures to tool errors. |
-| L-323 | V | §1.5 global_always followUpTopics item (Part 4) | Medium | Human | asked | 4 | In Part 4, requires_tax_pro returns no_approved_answer and ends a caller who wants a Tax Pro. |
-| L-324 | V | §2 State 3 Appointment Details; agent_specific_tools.get_customer_appointments | Medium | Human | asked | 4 | Appointment-details read path has no finalOutcome; the terminal contract cannot validate. |
-| L-325 | V | §1.5 terminal_payload_contract nextAction capture_intent | Low | Human | asked | 4 | No outcome uses capture_intent after intent_unclear was deleted (D-042). |
+| L-322 | V | §3 Office Details Logic > No Name Match; office_always[2] | Medium | Human | fixed | 4 | Name no-match transfers as system_failure, but D-044 limits lookup failures to tool errors. |
+| L-323 | V | §1.5 global_always followUpTopics item (Part 4) | Medium | Human | decided | 4 | In Part 4, requires_tax_pro returns no_approved_answer and ends a caller who wants a Tax Pro. |
+| L-324 | V | §2 State 3 Appointment Details; agent_specific_tools.get_customer_appointments | Medium | Human | fixed | 4 | Appointment-details read path has no finalOutcome; the terminal contract cannot validate. |
+| L-325 | V | §1.5 terminal_payload_contract nextAction capture_intent | Low | Human | fixed | 4 | No outcome uses capture_intent after intent_unclear was deleted (D-042). |
 | L-326 | D,E | §2 State 5 workflow.schedule_new[1] | Medium | Safe | fixed | 5 | "rejecting it" could mean the Tax Pro; now "rejecting that office" (D-048 wording; guard not applied: the decision names this anchor). |
 | L-327 | C,E | §1.5 global_outcomes.transfer_unavailable | Medium | Safe | fixed | 5 | Failed call still read as nextAction close with supportHoursSpoken; scoped per D-043 (guard not applied: D-043 names this outcome). Closes L-176. |
 | L-328 | B | §1.3 Leave-a-Message Ownership third bullet; global_always leave-message item | Medium | Safe | fixed | 5 | leave_message_offer triggers omitted D-045's hours_unavailable case. |
@@ -360,15 +360,15 @@ Status values: open, fixed, asked, decided, deferred, rejected, backlog, reverte
 | L-354 | E,F | §3 State 2 workflow.office_contact_flow[0] | Low | Human | backlog | 5 | Describes the Leave a Message flow's internals; oscillation guard. |
 | L-355 | C | agent_specific_outcomes.appointment_already_canceled; Part 5 Conventions summary bullet | Low | Human | backlog | 5 | canceledSummary means a write result and a retrieved record; oscillation guard. |
 | L-356 | C | Part 5 Conventions first bullet | Low | Human | backlog | 5 | Dead envelope synonyms; oscillation guard (L-321). |
-| L-357 | A,B,C,D,E | §2 State 2 After Part 4; scheduler_always routed_to_scheduler item | Medium | Human | asked | 5 | Unscoped rule can book Part 4's own callback handoff as tax_prep; priorTransaction vs priorTransaction.finalOutcome. |
-| L-358 | A,D,E | §1.1 operation; routed_to_scheduler | Medium | Human | asked | 5 | Another-Tax-Pro handoff sets no operation, so the Scheduler re-asks book, change, or cancel. |
-| L-359 | A,D | §2 State 2 Tax Pro Requests; interruptions.intent_change | Medium | Human | asked | 5 | Own or named Tax Pro request after routed_to_scheduler loops back to Part 4. |
-| L-360 | A | workflow.schedule_new[1]; scenario_selection item 8 | Medium | Human | asked | 5 | Scheduler may re-offer the prior Tax Pro Part 4 found unavailable. |
-| L-361 | B,C | terminal_payload_contract taxProRef/officeRef clause and appointmentType; §1.1 carried values | Medium | Human | asked | 5 | Handback fields are re-read as carried values (unavailable Tax Pro's ref; committed type). |
-| L-362 | A,C,D | §3 Office Contact Triage; workflow.office_contact_flow | Medium | Human | asked | 5 | office_contact at a closed_for_season office has no end state. |
-| L-363 | B,D | §2 State 3 Appointment Details; get_customer_appointments | Medium | Human | asked | 5 | Details answer ends a booking in progress; no handling for none_found, several, too_many, canceled. |
-| L-364 | A | §3 Out of Scope; §4 Out-of-Scope (Appointments) | Medium | Human | asked | 5 | Parts 3 and 4 have no route for appointment-details questions. |
-| L-365 | C | terminal_payload_contract intent; §3 Unclear intent | Medium | Human | asked | 5 | Part 3 clarification_exhausted on intent has no valid intent value. |
-| L-366 | C,D,E | §2 State 2 DDO Rules > Rescheduling; Post-Commit Requests | Medium | Human | asked | 5 | DDO change: same-invocation send vs handback; no key; next invocation's "change" hits none_found. |
-| L-367 | D | interruptions.cancel_said; workflow.cancel_existing[2] | Medium | Human | asked | 5 | No pre-commit switch between operations except to cancel. |
-| L-368 | D | tax_extension row; scheduler_always tax_extension item | Medium | Human | asked | 5 | Declining the closed-window tax_prep pivot has no exit. |
+| L-357 | A,B,C,D,E | §2 State 2 After Part 4; scheduler_always routed_to_scheduler item | Medium | Human | fixed | 5 | Unscoped rule can book Part 4's own callback handoff as tax_prep; priorTransaction vs priorTransaction.finalOutcome. |
+| L-358 | A,D,E | §1.1 operation; routed_to_scheduler | Medium | Human | fixed | 5 | Another-Tax-Pro handoff sets no operation, so the Scheduler re-asks book, change, or cancel. |
+| L-359 | A,D | §2 State 2 Tax Pro Requests; interruptions.intent_change | Medium | Human | fixed | 5 | Own or named Tax Pro request after routed_to_scheduler loops back to Part 4. |
+| L-360 | A | workflow.schedule_new[1]; scenario_selection item 8 | Medium | Human | fixed | 5 | Scheduler may re-offer the prior Tax Pro Part 4 found unavailable. |
+| L-361 | B,C | terminal_payload_contract taxProRef/officeRef clause and appointmentType; §1.1 carried values | Medium | Human | fixed | 5 | Handback fields are re-read as carried values (unavailable Tax Pro's ref; committed type). |
+| L-362 | A,C,D | §3 Office Contact Triage; workflow.office_contact_flow | Medium | Human | fixed | 5 | office_contact at a closed_for_season office has no end state. |
+| L-363 | B,D | §2 State 3 Appointment Details; get_customer_appointments | Medium | Human | fixed | 5 | Details answer ends a booking in progress; no handling for none_found, several, too_many, canceled. |
+| L-364 | A | §3 Out of Scope; §4 Out-of-Scope (Appointments) | Medium | Human | fixed | 5 | Parts 3 and 4 have no route for appointment-details questions. |
+| L-365 | C | terminal_payload_contract intent; §3 Unclear intent | Medium | Human | fixed | 5 | Part 3 clarification_exhausted on intent has no valid intent value. |
+| L-366 | C,D,E | §2 State 2 DDO Rules > Rescheduling; Post-Commit Requests | Medium | Human | fixed | 5 | DDO change: same-invocation send vs handback; no key; next invocation's "change" hits none_found. |
+| L-367 | D | interruptions.cancel_said; workflow.cancel_existing[2] | Medium | Human | fixed | 5 | No pre-commit switch between operations except to cancel. |
+| L-368 | D | tax_extension row; scheduler_always tax_extension item | Medium | Human | fixed | 5 | Declining the closed-window tax_prep pivot has no exit. |
