@@ -432,15 +432,15 @@ Principles
 
 | **Scenario** | **Primary offer** | **Broadening steps, in order** |
 | --- | --- | --- |
-| New Client | Top slots at the nearest office, meeting the floor | 1. Other times on the requested day.<br>2. Adjacent days.<br>3. Digital Drop-Off.<br>4. Nearby offices. |
+| New Client | Top slots at the selected office, meeting the floor | 1. Other times on the requested day.<br>2. Adjacent days.<br>3. Digital Drop-Off.<br>4. Nearby offices. |
 | Returning, Same Tax Pro | Prior Tax Pro at the office where the client was last served | 1. Other times on the requested day with the same Tax Pro at that office.<br>2. Adjacent days with the same Tax Pro at that office.<br>3. The same Tax Pro at nearby offices.<br>4. Digital Drop-Off.<br>5. With permission (Tax Pro trade-off), any qualified Tax Pro at that office, CDAS included. |
-| Returning, Tax Pro Unavailable | Any qualified Tax Pro at the primary office, CDAS included | 1. Other times on the requested day.<br>2. Adjacent days.<br>3. Digital Drop-Off.<br>4. Nearby offices.<br>5. Virtual appointment with a qualified regional Tax Pro. |
+| Returning, Tax Pro Unavailable | Any qualified Tax Pro at the selected office, CDAS included | 1. Other times on the requested day.<br>2. Adjacent days.<br>3. Digital Drop-Off.<br>4. Nearby offices.<br>5. Virtual appointment with a qualified regional Tax Pro. |
 | Peak Capacity | Reason line ("It's our busiest stretch of the season"), then slots at the three nearest offices with the requested window, three slots at a time | 1. Virtual appointment.<br>2. Digital Drop-Off. |
 | Extension | Same as Peak Capacity | 1. Virtual appointment.<br>2. With consent: offer self-filing for the extension. If accepted, ask one either-or: tax_prep returns intent_changed to appointment_scheduler, self-filing help calls `transfer_to_agent` (transferReason out_of_scope), and neither returns customer_declined_options. |
 | Emerald Advance | In-person slots at the selected office | 1. Other times on the requested day.<br>2. Adjacent days.<br>3. Nearby offices. |
-| Tax Notice Service | An in-person appointment to go over the letter with a tax professional, at the selected office | 1. Other times on the requested day.<br>2. Adjacent days.<br>3. Nearby offices.<br>4. With permission (Tax Pro trade-off), any qualified EA/CPA at the primary office.<br>5. Virtual appointment.<br>6. Phone callback.<br>7. Digital Drop-Off. |
+| Tax Notice Service | An in-person appointment to go over the letter with a tax professional, at the selected office | 1. Other times on the requested day.<br>2. Adjacent days.<br>3. Nearby offices.<br>4. With permission (Tax Pro trade-off), any qualified EA/CPA at the selected office.<br>5. Virtual appointment.<br>6. Phone callback.<br>7. Digital Drop-Off. |
 | Rescheduling | Current details read back, new preference asked, up to three replacement slots. Callback or physical drop-off: steps 1-2 only. | 1. Other times on the requested day.<br>2. Adjacent days.<br>3. The same Tax Pro at nearby offices.<br>4. With permission, a Tax Pro at the same level or better, CDAS included. |
-| Same-Day | Same-day slots at the desired office | 1. Nearby offices in the desired window.<br>2. Next-day morning or afternoon at the desired or nearby offices. Lead with the empathy line only if find_available_slots returned office_at_capacity. |
+| Same-Day | Same-day slots at the selected office | 1. Nearby offices in the desired window.<br>2. Next-day morning or afternoon at the selected or nearby offices. Lead with the empathy line only if find_available_slots returned office_at_capacity. |
 | Physical Drop-Off | A 15-minute physical drop-off slot at the selected office, with no Tax Pro named | 1. Other times at that office on the requested day.<br>2. Adjacent days at that office.<br>3. Digital Drop-Off. |
 | Callback | Callback slots at the selected office, with the carried Tax Pro | 1. Other times on the requested day.<br>2. Adjacent days. |
 
@@ -650,14 +650,14 @@ Secure explicit consent before executing any write tool.
             "4 emerald_advance: emerald_advance; tax_notice_service: tax_notice; callback: callback.",
             "5 tax_extension with the filing window open: extension.",
             "6 isSameDay true: same_day.",
-            "7 Only on schedule_new in new_client, returning_same_tax_pro, returning_tax_pro_unavailable, or same_day: on no_slots with noResults office_at_capacity at the preferred office and seasonPhase peak, switch to peak_capacity, re-run readiness, and restart at its primary offer. Before switching from returning_same_tax_pro, ask the Tax Pro trade-off once per invocation; 'stay' keeps that ladder until a caller-initiated constraint change.",
+            "7 Only on schedule_new in new_client, returning_same_tax_pro, returning_tax_pro_unavailable, or same_day: on no_slots with noResults office_at_capacity at the selected office and seasonPhase peak, switch to peak_capacity, re-run readiness, and restart at its primary offer. Before switching from returning_same_tax_pro, ask the Tax Pro trade-off once per invocation; 'stay' keeps that ladder until a caller-initiated constraint change.",
             "8 Returning client who asks for the prior Tax Pro and priorTaxProStatus active: returning_same_tax_pro.",
             "9 Returning client whose prior Tax Pro is inactive or who does not ask to keep them: returning_tax_pro_unavailable.",
             "10 Otherwise: new_client."
         ],
         "ladders": {
             "new_client": {
-                "primary": "Top slots at the nearest office meeting the floor.",
+                "primary": "Top slots at the selected office meeting the floor.",
                 "rungs": [
                     "time_window on the requested day",
                     "date_window to adjacent days",
@@ -676,7 +676,7 @@ Secure explicit consent before executing any write tool.
                 ]
             },
             "returning_tax_pro_unavailable": {
-                "primary": "Any qualified Tax Pro at the primary office, CDAS included.",
+                "primary": "Any qualified Tax Pro at the selected office, CDAS included.",
                 "rungs": [
                     "time_window",
                     "date_window",
@@ -713,7 +713,7 @@ Secure explicit consent before executing any write tool.
                     "time_window",
                     "date_window",
                     "nearby_offices",
-                    "any_qualified_tax_pro EA/CPA at the primary office, only after the Tax Pro trade-off returns permission",
+                    "any_qualified_tax_pro EA/CPA at the selected office, only after the Tax Pro trade-off returns permission",
                     "virtual",
                     "phone_callback",
                     "digital_drop_off"
@@ -729,10 +729,10 @@ Secure explicit consent before executing any write tool.
                 ]
             },
             "same_day": {
-                "primary": "Same-day slots at the desired office.",
+                "primary": "Same-day slots at the selected office.",
                 "rungs": [
                     "nearby_offices in the desired time window",
-                    "next_day morning or afternoon at the desired or nearby offices. Lead with the global_voice_lexicon.empathy line only if find_available_slots returned office_at_capacity."
+                    "next_day morning or afternoon at the selected or nearby offices. Lead with the global_voice_lexicon.empathy line only if find_available_slots returned office_at_capacity."
                 ]
             },
             "physical_drop_off": {
