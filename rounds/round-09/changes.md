@@ -34,3 +34,7 @@ Reviewers returned findings in replies (the harness blocked their writes); the o
 
 ## Size
 17,641 words (lint), 140,825 bytes. Round growth +0.95% (limit 1.0%). Total growth +4.22% (limit 5%). Lint: RESULT WARN, no FAIL.
+
+## Answers applied
+- L-438 (Q-96, option A, D-114). Deleted §3 Office Contact Triage > Cross-Office Restriction and `office_never` "Never provide a phone number for any office other than the routed office." The office_info phone-number item (mainPhoneSpoken for the routed office) stays.
+- Blank guesses (D-100 to D-113) kept as decided.

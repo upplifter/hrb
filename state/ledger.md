@@ -441,7 +441,7 @@ Status values: open, fixed, asked, decided, deferred, rejected, backlog, reverte
 | L-435 | D | terminal_payload_contract; transfer_unavailable | Medium | Human | decided | 9 | Post-commit transfer exits report transactionOccurred false. |
 | L-436 | D | Tax Pro Trade-off; returning_same_tax_pro rung 5 | Medium | Human | decided | 9 | Rung 5 question after a peak "stay" undefined. |
 | L-437 | D | scheduler_always phone_callback item | Medium | Human | decided | 9 | Reason capture timing on an accepted phone_callback rung. |
-| L-438 | D | §3 Cross-Office Restriction; office_never phone item | Medium | Human | asked | 9 | Rule cannot fire after D-044 and D-094; unchanged pending answer (Q-96). |
+| L-438 | D | §3 Cross-Office Restriction; office_never phone item | Medium | Human | decided | 9 | Rule cannot fire after D-044 and D-094; deleted under D-114 (Q-96, option A). |
 | L-439 | E | §2 State 3 Tax Pro Trade-off (prose) | Medium | Safe | fixed | 9 | Prose lacked the D-074 and D-090 rejected-Tax-Pro rule. |
 | L-440 | E,F | global_always empathy item | Medium | Human | decided | 9 | "Promises no person" admits path-bound lines. |
 | L-441 | E | §2 Tax Pro Requests; interruptions.intent_change | Medium | Human | decided | 9 | "to speak to" lost; a keep-prior answer reads as a Tax Pro request. |

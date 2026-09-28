@@ -146,3 +146,10 @@ Constitution applied: yes (2026-09-28)
 - Size: 17,641 words (lint), 140,825 bytes. Round growth +0.95% (limit 1.0%). Total growth +4.22% (limit 5%).
 - Lint: RESULT WARN, no FAIL.
 - Sweep clean: no (new Medium findings). Clean-sweep counter: 0.
+
+## Round 9 answers (applied after the sweep)
+- Q-96 answered A, recorded as D-114 (L-438 decided). The six flagged guesses (D-100, D-104, D-108, D-111, D-113, D-101) were left blank and stand.
+- Cross-Office Restriction and the `office_never` phone item deleted. No outcome, nextAction, routingTarget, tool, or field added or removed.
+- Verification by the orchestrator: pass, 0 reverted.
+- Size: 17,598 words (lint), 140,552 bytes. Total growth +4.02% (limit 5%). Lint: RESULT WARN, no FAIL.
+- No Medium-or-higher item is open. Backlog (Low) remains, including L-446, L-449, L-450.

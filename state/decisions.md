@@ -116,3 +116,4 @@ D-110 | transfer_unavailable returns leave_message_offer only when leaveMessageA
 D-111 | Whenever a Tax Pro is bound, the Scheduler sends taxProPreference (source caller_stated, prior_tax_pro, carried, or existing_appointment) and taxProRef to the search tools. D-079 values unchanged. (Round 9 guess, flagged.) | Round 9 guess | L-443
 D-112 | No change to check_search_readiness issue: a past date is judged from currentDateTime, and a closed window by the type row. (Round 9 guess.) | Round 9 guess | L-444
 D-113 | A transfer path with no §1.4 row speaks the agent_available line. (Round 9 guess.) | Round 9 guess | L-445
+D-114 | The Cross-Office Restriction and the `office_never` phone-number item are deleted; a phone number follows the office_info and office_contact rules with no separate restriction. | Q-96 | L-438
